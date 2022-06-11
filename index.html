@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Scribbler Documentation - a code documentation page template for codrops
+    </title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="scribbler-global.css" />
+    <link rel="stylesheet" href="scribbler-doc.css" />
+    <link rel="author" href="humans.txt" />
+  </head>
+  <body>
+    <div class="doc__bg"></div>
+    <nav class="header">
+      <h1 class="logo">Escape <span class="logo__thin">Room</span></h1>
+      <ul class="menu">
+        <div class="menu__item toggle"><span></span></div>
+        <li class="menu__item">
+          <a href="" class="link link--dark"
+            ><i class="fa fa-github"></i> Github</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div class="wrapper">
+      <aside class="doc__nav">
+        <ul>
+          <li class="js-btn selected">Introductie</li>
+          <li class="js-btn">1. Random seed</li>
+          <li class="js-btn">2. Puzzel morse</li>
+          <li class="js-btn">3. Puzzel Afstand</li>
+          <li class="js-btn">4. Puzzel Lazer</li>
+          <li class="js-btn">5. Puzzel Kluis</li>
+        </ul>
+      </aside>
+      <article class="doc__content">
+        <section class="js-section">
+          <h2 class="section__title">Introductie</h2>
+          <p>
+            Je wilt inbreken in een bank. Je moet eerst de juist keycard vinden
+            van de bankmedewerkers. Als je de keycard hebt kan je de code van
+            het alarm uitschakelen. Hierna zal je de lazers omzeilen en dan kan
+            je naar de kluis gaan, om deze te openen moet je naar de code zoeken
+            in de bank zelf.
+          </p>
+          <!-- <h3 class="section__title">Installation</h3>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                $ scribbler  ——config
+                  {
+                    “encryption”: true, 
+                    “highlighting“: true,
+                    “prettyTable”: false,
+                    “font”: [“Helvetica”, “sans-serif”],
+                    “folder”: “~/Desktop“
+                  }
+              </code>
+            </pre>
+          </div> -->
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Flowchart:</h3>
+          <img src="./images/Hackaton_.svg" alt="" width="80%" />
+        </section>
+        <!-- <section class="js-section">
+          <h3 class="section__title">Team</h3>
+          <table id="customers">
+            <tr>
+              <th>Naam</th>
+              <th>Familienaam</th>
+              <th>Richting</th>
+              <th>Puzzel</th>
+            </tr>
+            <tr>
+              <td>Thomas</td>
+              <td>Anseeuw</td>
+              <td>Web&Mobile</td>
+              <td>Puzzel kluis</td>
+            </tr>
+            <tr>
+              <td>Michiel</td>
+              <td>Van Himbeeck</td>
+              <td>Web&Mobile</td>
+              <td>Random seed</td>
+            </tr>
+            <tr>
+              <td>Quinten</td>
+              <td>Conil</td>
+              <td>Web&Mobile</td>
+              <td>Puzzel Lazer</td>
+            </tr>
+            <tr>
+              <td>Milan</td>
+              <td>Vernimmen</td>
+              <td>Infrastructuur</td>
+              <td>Puzzel Morse</td>
+            </tr>
+            <tr>
+              <td>Joran</td>
+              <td>Buddaert</td>
+              <td>Elektronica</td>
+              <td>Puzzel Afstand</td>
+            </tr>
+          </table> -->
+        <!-- <p>
+            Malis percipitur an pro. Pro aperiam persequeris at, at sonet
+            sensibus mei, id mea postulant definiebas concludaturque. Id qui
+            malis abhorreant, mazim melius quo et. At eam altera dolorum, case
+            dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no
+            verterem deseruisse, mea brute postea te, ne per tacimates suavitate
+            vituperatoribus.
+          </p> -->
+        <hr />
+        <!-- </section> -->
+        <section class="js-section">
+          <h2 class="section__title">1. Random seed</h2>
+          <p>
+            Voor random seed te implementeren hebben we een library geschreven.
+            deze roep je op met een start waarde en geeft dan array[5] terug. De
+            eerste 4 array waarde zijn voor je
+          </p>
+          <!-- <p>
+            Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel
+            inani aeterno ad. Facer oratio ex per. At eam movet verear, in sea
+            brute patrioque disputando, usu nonumes torquatos an. Ex his
+            quaerendum intellegebat, ut vel homero accusam. Eum at debet
+            tibique, in vocibus temporibus adversarium sed. Porro verear eu vix,
+            ne usu tation vituperata.
+          </p>
+          <p>
+            Malis percipitur an pro. Pro aperiam persequeris at, at sonet
+            sensibus mei, id mea postulant definiebas concludaturque. Id qui
+            malis abhorreant, mazim melius quo et. At eam altera dolorum, case
+            dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no
+            verterem deseruisse, mea brute postea te, ne per tacimates suavitate
+            vituperatoribus.
+          </p>
+          <p>
+            Malis percipitur an pro. Pro aperiam persequeris at, at sonet
+            sensibus mei, id mea postulant definiebas concludaturque. Id qui
+            malis abhorreant, mazim melius quo et. At eam altera dolorum, case
+            dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no
+            verterem deseruisse, mea brute postea te, ne per tacimates suavitate
+            vituperatoribus.
+          </p> -->
+          <hr />
+        </section>
+        <section class="js-section">
+          <h2 class="section__title">2. Puzzel morse</h2>
+          <h3>Uitleg</h3>
+          <p>
+            Je kan op een knopje drukken om de morsecode te laten spelen. Als je
+            die hebt opgelost kan je die ingeven in de eerste keypad. Als de
+            code juist is dan komt er op de eerste display “Leg de gekregen tag
+            op de pad en hij zal programmeren.
+          </p>
+          <h3>Schema</h3>
+          <img src="./images/SCHEMA.png" alt="" width="100%" />
+          <!-- <p>
+            Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel
+            inani aeterno ad. Facer oratio ex per. At eam movet verear, in sea
+            brute patrioque disputando, usu nonumes torquatos an. Ex his
+            quaerendum intellegebat, ut vel homero accusam. Eum at debet
+            tibique, in vocibus temporibus adversarium sed. Porro verear eu vix,
+            ne usu tation vituperata.
+          </p>
+          <p>
+            Malis percipitur an pro. Pro aperiam persequeris at, at sonet
+            sensibus mei, id mea postulant definiebas concludaturque. Id qui
+            malis abhorreant, mazim melius quo et. At eam altera dolorum, case
+            dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no
+            verterem deseruisse, mea brute postea te, ne per tacimates suavitate
+            vituperatoribus.
+          </p> -->
+        </section>
+        <section class="js-section">
+          <h2 class="section__title">3. Puzzel Afstand</h2>
+          <h3>Uitleg</h3>
+          <p>
+            Bij deze puzzel moet je een afstandsensor geruiken afhankelijk van
+            of je verder of dichter gaat krijg je een waarde. Als je deze
+            waarden in het keypad ingeeft zal je het infrarood bakje krijgen.
+          </p>
+          <h3>Schema</h3>
+          <img src="./images/Schema_afstand.png" alt="" width="100%" />
+          <!-- <p>
+            Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel
+            inani aeterno ad. Facer oratio ex per. At eam movet verear, in sea
+            brute patrioque disputando, usu nonumes torquatos an. Ex his
+            quaerendum intellegebat, ut vel homero accusam. Eum at debet
+            tibique, in vocibus temporibus adversarium sed. Porro verear eu vix,
+            ne usu tation vituperata.
+          </p>
+          <p>
+            Malis percipitur an pro. Pro aperiam persequeris at, at sonet
+            sensibus mei, id mea postulant definiebas concludaturque. Id qui
+            malis abhorreant, mazim melius quo et. At eam altera dolorum, case
+            dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no
+            verterem deseruisse, mea brute postea te, ne per tacimates suavitate
+            vituperatoribus.
+          </p> -->
+        </section>
+        <section class="js-section">
+          <h2 class="section__title">4. Puzzel Lazer</h2>
+          <h3>Uitleg</h3>
+          <p>
+            Bij deze puzzel moet je een lichtsensor activeren doormiddel van een
+            lazer. Deze lazer zal je moeten weerspiegelen op de sensor hiervoor
+            moet je spiegels draaien met potentiometers. Wanner je de
+            lichtsensor activeert krijg je de eindcode voor het infrarood bakje.
+          </p>
+          <h3>Schema</h3>
+          <img src="./images/PuzzleLaserSchema1.PNG" alt="" />
+          <!-- <p>
+            Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel
+            inani aeterno ad. Facer oratio ex per. At eam movet verear, in sea
+            brute patrioque disputando, usu nonumes torquatos an. Ex his
+            quaerendum intellegebat, ut vel homero accusam. Eum at debet
+            tibique, in vocibus temporibus adversarium sed. Porro verear eu vix,
+            ne usu tation vituperata.
+          </p>
+          <p>
+            Malis percipitur an pro. Pro aperiam persequeris at, at sonet
+            sensibus mei, id mea postulant definiebas concludaturque. Id qui
+            malis abhorreant, mazim melius quo et. At eam altera dolorum, case
+            dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no
+            verterem deseruisse, mea brute postea te, ne per tacimates suavitate
+            vituperatoribus.
+          </p> -->
+        </section>
+        <section class="js-section">
+          <div>
+            <h2 class="section__title">5. Puzzel Kluis</h2>
+            <p>
+              Deze puzzel is de eindpuzzel van het spel. Het is een kluis die je
+              moet openen. Je zal deze moeten openen door eerste infrarood code,
+              code verkrijgbaar door puzzel laser op te lossen, in te geven.
+              Vervolgens als deze code correct is moet je de badge verkregen in
+              'puzzel morse' gebruiken om je eigen badge toegang te geven. Als
+              dit is kan je de kluis eindelijk in.
+            </p>
+            <h3>Uitleg</h3>
+            <p>
+              Voor te beginnen zal je een random seed door krijgen van Puzzel
+              Laser. Hierdoor kun je checken op een wachtwoord dat zijn puzzel
+              de oplossing voor geeft. eens dat het passwoord gegenereerd is met
+              de custom CodeGenerator library begint de code te luisteren naar
+              infrarood intput en vergelijkt deze met het passwoord. Als deze
+              gelijk is kan je badges beginnen scannen. In het begin wordt je
+              begin badge geweigerd maar met behult van de Master badge
+              verkeregen in Puzzel Morse kan je jouw badge opslaan. wanneer en
+              badge is opgeslagen heeft deze toegang tot de kluis en is de
+              puzzel afgelopen.
+              <!-- <img
+                    src="./assets/images/blokschema_kluis.png"
+                    alt="Een blokschema van de bovenstaande uitleg"
+                  /> -->
+            </p>
+            <img src="./images/blokschema_kluis.png" alt="" width="100%" />
+            <h3>Schema</h3>
+            <img src="./images/Puzzel_kluis.PNG" alt="" width="100%" />
+          </div>
+          <!-- <p>
+            Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel
+            inani aeterno ad. Facer oratio ex per. At eam movet verear, in sea
+            brute patrioque disputando, usu nonumes torquatos an. Ex his
+            quaerendum intellegebat, ut vel homero accusam. Eum at debet
+            tibique, in vocibus temporibus adversarium sed. Porro verear eu vix,
+            ne usu tation vituperata.
+          </p>
+          <p>
+            Malis percipitur an pro. Pro aperiam persequeris at, at sonet
+            sensibus mei, id mea postulant definiebas concludaturque. Id qui
+            malis abhorreant, mazim melius quo et. At eam altera dolorum, case
+            dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no
+            verterem deseruisse, mea brute postea te, ne per tacimates suavitate
+            vituperatoribus.
+          </p> -->
+        </section>
+      </article>
+    </div>
+
+    <footer class="footer">
+      Scribbler is a free HTML template created exclusively for
+      <a
+        href="https://tympanus.net/codrops/"
+        target="_blank"
+        class="link link--light"
+        >Codrops</a
+      >.
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="scribbler.js"></script>
+  </body>
+</html>
