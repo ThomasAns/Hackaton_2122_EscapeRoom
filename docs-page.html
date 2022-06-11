@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      CoderDocs - Bootstrap 4 Documentation Template For Software Projects
+    </title>
+
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Bootstrap 4 Template For Software Startups"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/images/site.webmanifest" />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome JS-->
+    <script defer src="assets/fontawesome/js/all.min.js"></script>
+
+    <!-- Plugins CSS -->
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/plugins/simplelightbox/simple-lightbox.min.css"
+    />
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme.css" />
+  </head>
+
+  <body class="docs-page">
+    <header class="header fixed-top">
+      <div class="branding docs-branding">
+        <div class="container-fluid position-relative py-2">
+          <div class="docs-logo-wrapper">
+            <button
+              id="docs-sidebar-toggler"
+              class="docs-sidebar-toggler docs-sidebar-visible me-2 d-xl-none"
+              type="button"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <div class="site-logo">
+              <a class="navbar-brand" href="index.html"
+                ><img
+                  class="logo-icon me-2"
+                  src="assets/images/hackaton-logo.svg"
+                  alt="logo"
+                /><span class="logo-text"
+                  >Escape<span class="text-alt">Room</span></span
+                ></a
+              >
+            </div>
+          </div>
+          <!--//docs-logo-wrapper-->
+          <div
+            class="docs-top-utilities d-flex justify-content-end align-items-center"
+          >
+            <!-- <ul
+              class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex"
+            >
+              <li class="list-inline-item">
+                <a href="#"><i class="fab fa-github fa-fw"></i></a>
+              </li>
+            </ul> -->
+            <!--//social-list-->
+            <a
+              href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/coderdocs-free-bootstrap-5-documentation-template-for-software-projects/"
+              class="btn btn-primary d-none d-lg-flex"
+              ><i class="fab fa-github fa-fw"></i>Github</a
+            >
+          </div>
+          <!--//docs-top-utilities-->
+        </div>
+        <!--//container-->
+      </div>
+      <!--//branding-->
+    </header>
+    <!--//header-->
+
+    <div class="docs-wrapper">
+      <div id="docs-sidebar" class="docs-sidebar">
+        <div class="top-search-box d-lg-none p-3">
+          <form class="search-form">
+            <input
+              type="text"
+              placeholder="Search the docs..."
+              name="search"
+              class="form-control search-input"
+            />
+            <button type="submit" class="btn search-btn" value="Search">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+        <nav id="docs-nav" class="docs-nav navbar">
+          <ul class="section-items list-unstyled nav flex-column pb-3">
+            <li class="nav-item section-title">
+              <a class="nav-link scrollto active" href="#section-1"
+                ><span class="theme-icon-holder me-2"
+                  ><i class="fas fa-map-signs"></i></span
+                >Introduction</a
+              >
+            </li>
+            <li class="nav-item section-title mt-3">
+              <a class="nav-link scrollto" href="#section-2"
+                ><span class="theme-icon-holder me-2"
+                  ><i class="fas fa-arrow-down"></i></span
+                >Random seed</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollto" href="#item-2-1">Uitleg</a>
+            </li>
+            <li class="nav-item section-title mt-3">
+              <a class="nav-link scrollto" href="#section-3"
+                ><span class="theme-icon-holder me-2"
+                  ><i class="fas fa-box"></i></span
+                >Puzzel Morse</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollto" href="#item-3-1">Uitleg</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollto" href="#item-3-2">Schema</a>
+            </li>
+            <li class="nav-item section-title mt-3">
+              <a class="nav-link scrollto" href="#section-4"
+                ><span class="theme-icon-holder me-2"
+                  ><i class="fas fa-cogs"></i></span
+                >Puzzel Afstand</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollto" href="#item-4-1">Uitleg</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollto" href="#item-4-2">Schema</a>
+            </li>
+            <li class="nav-item section-title mt-3">
+              <a class="nav-link scrollto" href="#section-5"
+                ><span class="theme-icon-holder me-2"
+                  ><i class="fas fa-lightbulb"></i></span
+                >Puzzel Laser</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollto" href="#item-5-1">Uitleg</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollto" href="#item-5-2">Schema</a>
+            </li>
+            <li class="nav-item section-title mt-3">
+              <a class="nav-link scrollto" href="#section-6"
+                ><span class="theme-icon-holder me-2"
+                  ><i class="fas fa-laptop-code"></i></span
+                >Puzzel Kluis</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollto" href="#item-6-1">Uitleg</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollto" href="#item-6-2">Schema</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollto" href="#item-6-3">Code</a>
+            </li>
+            <!-- <li class="nav-item section-title mt-3">
+              <a class="nav-link scrollto" href="#section-7"
+                ><span class="theme-icon-holder me-2"
+                  ><i class="fas fa-tablet-alt"></i></span
+                >Mobile</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollto" href="#item-7-1">Section Item 7.1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollto" href="#item-7-2">Section Item 7.2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollto" href="#item-7-3">Section Item 7.3</a>
+            </li> -->
+            <!-- <li class="nav-item section-title mt-3">
+              <a class="nav-link scrollto" href="#section-8"
+                ><span class="theme-icon-holder me-2"
+                  ><i class="fas fa-book-reader"></i></span
+                >Resources</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollto" href="#item-8-1">Section Item 8.1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollto" href="#item-8-2">Section Item 8.2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollto" href="#item-8-3">Section Item 8.3</a>
+            </li>
+            <li class="nav-item section-title mt-3">
+              <a class="nav-link scrollto" href="#section-9"
+                ><span class="theme-icon-holder me-2"
+                  ><i class="fas fa-tools"></i></span
+                >FAQs</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollto" href="#item-9-1">Section Item 9.1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollto" href="#item-9-2">Section Item 9.2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollto" href="#item-9-3">Section Item 9.3</a>
+            </li> -->
+          </ul>
+        </nav>
+        <!--//docs-nav-->
+      </div>
+      <!--//docs-sidebar-->
+      <div class="docs-content">
+        <div class="container">
+          <article class="docs-article" id="section-1">
+            <header class="docs-header">
+              <h1 class="docs-heading">
+                Introductie
+                <span class="docs-time">Last updated: 2019-06-01</span>
+              </h1>
+              <section class="docs-intro">
+                <p>
+                  Je wilt inbreken in een bank. Je moet eerst de juist keycard
+                  vinden van de bankmedewerkers. Als je de keycard hebt kan je
+                  de code van het alarm uitschakelen. Hierna zal je de lazers
+                  omzeilen en dan kan je naar de kluis gaan, om deze te openen
+                  moet je naar de code zoeken in de bank zelf.
+                </p>
+              </section>
+              <!--//docs-intro-->
+
+              <h5>Team:</h5>
+              <div class="table-responsive my-5">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Naam</th>
+                      <th scope="col">Familienaam</th>
+                      <th scope="col">Richting</th>
+                      <th scope="col">Puzzel</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Thomas</td>
+                      <td>Anseeuw</td>
+                      <td>Web&Mobile</td>
+                      <td>Puzzel kluis</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Michiel</td>
+                      <td>Van Himbeeck</td>
+                      <td>Web&Mobile</td>
+                      <td>Library Random seed</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Quinten</td>
+                      <td>Conil</td>
+                      <td>Web&Mobile</td>
+                      <td>Puzzel Laser</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">4</th>
+                      <td>Milan</td>
+                      <td>Vernimmen</td>
+                      <td>Infrastructure</td>
+                      <td>Puzzel Morse</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">5</th>
+                      <td>Joran</td>
+                      <td>Buddaert</td>
+                      <td>Elektronica</td>
+                      <td>Puzzel Afstand</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+						
+              <h5>Flow chart:</h5>
+								<div class="simplelightbox-gallery">
+                <!-- <div class="col-12 col-md-4 mb-3"> -->
+									<div>
+                  <a href="./assets/images/Hackaton_.svg"
+                    ><img
+                      class="figure-img img-fluid shadow rounded"
+                      src="./assets/images/Hackaton_.svg"
+                      alt="Een overzicht voor de volgorde van de puzzels"
+                      title="Een overzicht voor de volgorde van de puzzels"
+                  /></a>
+                </div>
+              </div>
+              <p>
+                <!-- <img
+                  src="./assets/images/Hackaton_.svg"
+                  alt="Een overzicht voor de volgorde van de puzzels"
+                /> -->
+              </p>
+              <!-- <div class="docs-code-block"> -->
+              <!-- ** Embed github code starts ** -->
+              <!-- <script src="https://gist.github.com/xriley/fce6cf71edfd2dadc7919eb9c98f3f17.js"></script> -->
+              <!-- ** Embed github code ends ** -->
+              <!-- </div> -->
+              <!--//docs-code-block-->
+
+              <!-- <h5>Highlight.js Example:</h5>
+              <p>
+                You can
+                <a
+                  class="theme-link"
+                  href="https://github.com/highlightjs/highlight.js"
+                  target="_blank"
+                  >embed your code snippets using highlight.js</a
+                >
+                It supports
+                <a
+                  class="theme-link"
+                  href="https://highlightjs.org/static/demo/"
+                  target="_blank"
+                  >185 languages and 89 styles</a
+                >.
+              </p>
+              <p>
+                This template uses
+                <a
+                  class="theme-link"
+                  href="https://highlightjs.org/static/demo/"
+                  target="_blank"
+                  >Atom One Dark</a
+                >
+                style for the code blocks: <br /><code
+                  >&#x3C;link rel=&#x22;stylesheet&#x22;
+                  href=&#x22;//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css&#x22;&#x3E;</code
+                >
+              </p> -->
+              <!-- <div class="docs-code-block">
+                <pre class="shadow-lg rounded"><code class="json hljs">[
+  							{
+    						<span class="hljs-attr">"title"</span>: <span class="hljs-string">"apples"</span>,
+    						<span class="hljs-attr">"count"</span>: [<span class="hljs-number">12000</span>, <span class="hljs-number">20000</span>],
+    						<span class="hljs-attr">"description"</span>: {<span class="hljs-attr">"text"</span>: <span class="hljs-string">"..."</span>, <span class="hljs-attr">"sensitive"</span>: <span class="hljs-literal">false</span>}
+  							},
+  							{
+    						<span class="hljs-attr">"title"</span>: <span class="hljs-string">"oranges"</span>,
+    						<span class="hljs-attr">"count"</span>: [<span class="hljs-number">17500</span>, <span class="hljs-literal">null</span>],
+    						<span class="hljs-attr">"description"</span>: {<span class="hljs-attr">"text"</span>: <span class="hljs-string">"..."</span>, <span class="hljs-attr">"sensitive"</span>: <span class="hljs-literal">false</span>}
+  							},
+								]
+							</code></pre>
+              </div>-->
+              <!--//docs-code-block-->
+            </header>
+            <!--//section-->
+          </article>
+
+          <article class="docs-article" id="section-2">
+            <header class="docs-header">
+              <h1 class="docs-heading">Random seed</h1>
+              <!--//docs-intro-->
+            </header>
+            <section class="docs-section" id="item-2-1">
+              <h2 class="section-heading">uitleg</h2>
+             <p>
+                  Voor random seed te implementeren hebben we een library geschreven. deze roep je op met een start waarde en geeft dan array[5] terug. De eerste 4 array waarde zijn voor je 
+            </section>
+            <!--//section-->
+          </article>
+          <!--//docs-article-->
+
+          <article class="docs-article" id="section-3">
+            <header class="docs-header">
+              <h1 class="docs-heading">Puzzel Morse</h1>
+              <section class="docs-intro">
+                
+              </section>
+              <!--//docs-intro-->
+            </header>
+            <section class="docs-section" id="item-3-1">
+              <h2 class="section-heading">Uitleg</h2>
+              <p>
+                   Je kan op een knopje drukken om de morsecode te laten spelen.
+                  Als je die hebt opgelost kan je die ingeven in de eerste
+                  keypad. Als de code juist is dan komt er op de eerste display
+                  “Leg de gekregen tag op de pad en hij zal programmeren.
+                </p>
+            </section>
+            <!--//section-->
+
+            <section class="docs-section" id="item-3-2">
+              <h2 class="section-heading">Schema</h2>
+							<div class="simplelightbox-gallery">
+              <!-- <div class="col-12 col-md-4 mb-3"> -->
+								<div>
+                  <a href="./assets/images/SCHEMA.png"
+                    ><img
+                      class="figure-img img-fluid shadow rounded"
+                      src="./assets/images/SCHEMA.png"
+                      alt="Schema van de verbindingen tussen de componenten"
+                      title="Schema van de verbindingen tussen de componenten"
+                  /></a>
+                </div>
+              </div>
+            </section>
+            <!--//section-->
+            <!--//section-->
+          </article>
+          <!--//docs-article-->
+
+          <article class="docs-article" id="section-4">
+            <header class="docs-header">
+              <h1 class="docs-heading">Puzzel Afstand</h1>
+              <!--//docs-intro-->
+            </header>
+            <section class="docs-section" id="item-4-1">
+              <h2 class="section-heading">Uitleg</h2>
+        				<p>
+									Bij deze puzzel moet je een afstandsensor geruiken afhankelijk van of je verder of dichter gaat krijg je een waarde. Als je deze waarden in het keypad ingeeft zal je het infrarood bakje krijgen.
+                </p>
+            </section>
+            <!--//section-->
+
+            <section class="docs-section" id="item-4-2">
+              <h2 class="section-heading">Schema</h2>
+							<div class="simplelightbox-gallery">
+              <!-- <div class="col-12 col-md-4 mb-3"> -->
+								<div>
+                  <a href="./assets/images/schema_afstand.png"
+                    ><img
+                      class="figure-img img-fluid shadow rounded"
+                      src="./assets/images/schema_afstand.png"
+                      alt="Schema van de verbindingen tussen de componenten"
+                      title="Schema van de verbindingen tussen de componenten"
+                  /></a>
+                </div>
+              </div>
+            </section>
+            <!--//section-->
+          </article>
+          <!--//docs-article-->
+
+          <article class="docs-article" id="section-5">
+            <header class="docs-header">
+              <h1 class="docs-heading">Puzzel Lazer</h1>
+              <section class="docs-intro">
+              </section>
+              <!--//docs-intro-->
+            </header>
+            <section class="docs-section" id="item-5-1">
+              <h2 class="section-heading">uitleg</h2>
+              <p>
+                Bij deze puzzel moet je een lichtsensor activeren doormiddel van een lazer. Deze lazer zal je moeten weerspiegelen op de sensor hiervoor moet je spiegels draaien met potentiometers. Wanner je de lichtsensor activeert krijg je de eindcode voor het infrarood bakje.
+              </p>
+            </section>
+            <!--//section-->
+
+            <section class="docs-section" id="item-5-2">
+              <h2 class="section-heading">Schema</h2>
+         	<div class="simplelightbox-gallery">
+              <!-- <div class="col-12 col-md-4 mb-3"> -->
+								<div>
+                  <a href="./assets/images/PuzzleLaserSchema1.PNG"
+                    ><img
+                      class="figure-img img-fluid shadow rounded"
+                      src="./assets/images/puzzlelaserschema1.png"
+                      alt="Schema van de verbindingen tussen de componenten"
+                      title="Schema van de verbindingen tussen de componenten"
+                  /></a>
+                </div>
+              </div>
+            </section>
+            <!--//section-->
+            <!--//section-->
+          </article>
+          <!--//docs-article-->
+
+          <article class="docs-article" id="section-6">
+            <header class="docs-header">
+              <h1 class="docs-heading">Puzzel Kluis</h1>
+              <section class="docs-intro">
+                <p>
+                  Deze puzzel is de eindpuzzel van het spel. Het is een kluis
+                  die je moet openen. Je zal deze moeten openen door eerste
+                  infrarood code, code verkrijgbaar door puzzel laser op te
+                  lossen, in te geven. Vervolgens als deze code correct is moet
+                  je de badge verkregen in 'puzzel morse' gebruiken om je eigen
+                  badge toegang te geven. Als dit is kan je de kluis eindelijk
+                  in.
+                </p>
+              </section>
+              <!--//docs-intro-->
+            </header>
+            <section class="docs-section" id="item-6-1">
+              <h2 class="section-heading">Uitleg</h2>
+              <p>
+                Voor te beginnen zal je een random seed door krijgen van Puzzel
+                Laser. Hierdoor kun je checken op een wachtwoord dat zijn puzzel
+                de oplossing voor geeft. eens dat het passwoord gegenereerd is
+                met de custom CodeGenerator library begint de code te luisteren
+                naar infrarood intput en vergelijkt deze met het passwoord. Als
+                deze gelijk is kan je badges beginnen scannen. In het begin
+                wordt je begin badge geweigerd maar met behult van de Master
+                badge verkeregen in Puzzel Morse kan je jouw badge opslaan.
+                wanneer en badge is opgeslagen heeft deze toegang tot de kluis
+                en is de puzzel afgelopen.
+                <!-- <img
+                  src="./assets/images/blokschema_kluis.png"
+                  alt="Een blokschema van de bovenstaande uitleg"
+                /> -->
+              </p>
+								<div class="simplelightbox-gallery">
+                <!-- <div class="col-12 col-md-4 mb-3"> -->
+									<div>
+                  <a href="./assets/images/blokschema_kluis.png"
+                    ><img
+                      class="figure-img img-fluid shadow rounded"
+                      src="./assets/images/blokschema_kluis.png"
+                      alt=""
+                      title="Een blokschema van de bovenstaande uitleg"
+                  /></a>
+                </div>
+              </div>
+            </section>
+            <!--//section-->
+
+            <section class="docs-section" id="item-6-2">
+              <h2 class="section-heading">Schema</h2>
+									<div class="simplelightbox-gallery">
+                <!-- <div class="col-12 col-md-4 mb-3"> -->
+									<div>
+                  <a href="./assets/images/Puzzel_kluis.PNG"
+                    ><img
+                      class="figure-img img-fluid shadow rounded"
+                      src="./assets/images/Puzzel_kluis.PNG"
+                      alt="Schema van de verbindingen tussen de componenten"
+                      title="Schema van de verbindingen tussen de componenten"
+                  /></a>
+                </div>
+              </div>
+              <p>
+                <!-- <img
+                  src="./assets/images/Puzzel_kluis.PNG"
+                  alt="Schema van de verbindingen tussen de componenten"
+                /> -->
+              </p>
+              <div class="table-responsive my-5">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Componenten</th>
+                      <th scope="col">beschrijving</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>RFID-RC522</td>
+                      <td>interface om rdid badges te lezen of schrijven</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>VMWA307</td>
+                      <td>RGB led met common anode</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>VS1838B</td>
+                      <td>infrarood receiver</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">4</th>
+                      <td>Arduino uno</td>
+                      <td>microcontroller om alle code op te runnen</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            <!--//section-->
+
+            <section class="docs-section" id="item-6-3">
+              <h2 class="section-heading">Code</h2>
+              <div class="docs-code-block">
+                <pre class="shadow-lg rounded"><code class="hljs">
+  Void receiveEvent(int howMany) {
+    <span class="hljs-attr"> int x = Wire.read();</span>
+    <span class="hljs-attr">"count"</span>: [<span class="hljs-number">12000</span>, <span class="hljs-number">20000</span>],
+    <span class="hljs-attr">"description"</span>: {<span class="hljs-attr">"text"</span>: <span class="hljs-string">"..."</span>, <span class="hljs-attr">"sensitive"</span>: <span class="hljs-literal">false</span>}
+  },
+  {
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"oranges"</span>,
+    <span class="hljs-attr">"count"</span>: [<span class="hljs-number">17500</span>, <span class="hljs-literal">null</span>],
+    <span class="hljs-attr">"description"</span>: {<span class="hljs-attr">"text"</span>: <span class="hljs-string">"..."</span>, <span class="hljs-attr">"sensitive"</span>: <span class="hljs-literal">false</span>}
+  }
+]
+
+
+</code></pre>
+                <!-- ** Embed github code starts ** -->
+                <!-- <script src="https://gist.github.com/xriley/fce6cf71edfd2dadc7919eb9c98f3f17.js"></script> -->
+                <!-- ** Embed github code ends ** -->
+              </div>
+            </section>
+            <!--//section-->
+          </article>
+          <!--//docs-article-->
+
+          <!-- <article class="docs-article" id="section-7">
+            <header class="docs-header">
+              <h1 class="docs-heading">Mobile</h1>
+              <section class="docs-intro">
+                <p>
+                  Section intro goes here. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit. Quisque finibus condimentum nisl
+                  id vulputate. Praesent aliquet varius eros interdum suscipit.
+                  Donec eu purus sed nibh convallis bibendum quis vitae turpis.
+                  Duis vestibulum diam lorem, vitae dapibus nibh facilisis a.
+                  Fusce in malesuada odio.
+                </p>
+              </section> -->
+          <!--//docs-intro-->
+          <!-- </header>
+            <section class="docs-section" id="item-7-1">
+              <h2 class="section-heading">Section Item 7.1</h2>
+              <p>
+                Vivamus efficitur fringilla ullamcorper. Cras condimentum
+                condimentum mauris, vitae facilisis leo. Aliquam sagittis purus
+                nisi, at commodo augue convallis id. Sed interdum turpis quis
+                felis bibendum imperdiet. Mauris pellentesque urna eu leo
+                gravida iaculis. In fringilla odio in felis ultricies porttitor.
+                Donec at purus libero. Vestibulum libero orci, commodo nec arcu
+                sit amet, commodo sollicitudin est. Vestibulum ultricies
+                malesuada tempor.
+              </p>
+            </section> -->
+          <!--//section-->
+
+          <!-- <section class="docs-section" id="item-7-2">
+              <h2 class="section-heading">Section Item 7.2</h2>
+              <p>
+                Vivamus efficitur fringilla ullamcorper. Cras condimentum
+                condimentum mauris, vitae facilisis leo. Aliquam sagittis purus
+                nisi, at commodo augue convallis id. Sed interdum turpis quis
+                felis bibendum imperdiet. Mauris pellentesque urna eu leo
+                gravida iaculis. In fringilla odio in felis ultricies porttitor.
+                Donec at purus libero. Vestibulum libero orci, commodo nec arcu
+                sit amet, commodo sollicitudin est. Vestibulum ultricies
+                malesuada tempor.
+              </p>
+            </section> -->
+          <!--//section-->
+
+          <!-- <section class="docs-section" id="item-7-3">
+              <h2 class="section-heading">Section Item 7.3</h2>
+              <p>
+                Vivamus efficitur fringilla ullamcorper. Cras condimentum
+                condimentum mauris, vitae facilisis leo. Aliquam sagittis purus
+                nisi, at commodo augue convallis id. Sed interdum turpis quis
+                felis bibendum imperdiet. Mauris pellentesque urna eu leo
+                gravida iaculis. In fringilla odio in felis ultricies porttitor.
+                Donec at purus libero. Vestibulum libero orci, commodo nec arcu
+                sit amet, commodo sollicitudin est. Vestibulum ultricies
+                malesuada tempor.
+              </p>
+            </section> -->
+          <!--//section-->
+          <!-- </article> -->
+          <!--//docs-article-->
+
+          <!-- <article class="docs-article" id="section-8">
+            <header class="docs-header">
+              <h1 class="docs-heading">Resources</h1>
+              <section class="docs-intro">
+                <p>
+                  Section intro goes here. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit. Quisque finibus condimentum nisl
+                  id vulputate. Praesent aliquet varius eros interdum suscipit.
+                  Donec eu purus sed nibh convallis bibendum quis vitae turpis.
+                  Duis vestibulum diam lorem, vitae dapibus nibh facilisis a.
+                  Fusce in malesuada odio.
+                </p>
+              </section> -->
+              <!--//docs-intro-->
+            <!-- </header>
+            <section class="docs-section" id="item-8-1">
+              <h2 class="section-heading">Section Item 8.1</h2>
+              <p>
+                Vivamus efficitur fringilla ullamcorper. Cras condimentum
+                condimentum mauris, vitae facilisis leo. Aliquam sagittis purus
+                nisi, at commodo augue convallis id. Sed interdum turpis quis
+                felis bibendum imperdiet. Mauris pellentesque urna eu leo
+                gravida iaculis. In fringilla odio in felis ultricies porttitor.
+                Donec at purus libero. Vestibulum libero orci, commodo nec arcu
+                sit amet, commodo sollicitudin est. Vestibulum ultricies
+                malesuada tempor.
+              </p>
+            </section> -->
+            <!--//section-->
+
+            <!-- <section class="docs-section" id="item-8-2">
+              <h2 class="section-heading">Section Item 8.2</h2>
+              <p>
+                Vivamus efficitur fringilla ullamcorper. Cras condimentum
+                condimentum mauris, vitae facilisis leo. Aliquam sagittis purus
+                nisi, at commodo augue convallis id. Sed interdum turpis quis
+                felis bibendum imperdiet. Mauris pellentesque urna eu leo
+                gravida iaculis. In fringilla odio in felis ultricies porttitor.
+                Donec at purus libero. Vestibulum libero orci, commodo nec arcu
+                sit amet, commodo sollicitudin est. Vestibulum ultricies
+                malesuada tempor.
+              </p>
+            </section> -->
+            <!--//section-->
+
+            <!-- <section class="docs-section" id="item-8-3">
+              <h2 class="section-heading">Section Item 8.3</h2>
+              <p>
+                Vivamus efficitur fringilla ullamcorper. Cras condimentum
+                condimentum mauris, vitae facilisis leo. Aliquam sagittis purus
+                nisi, at commodo augue convallis id. Sed interdum turpis quis
+                felis bibendum imperdiet. Mauris pellentesque urna eu leo
+                gravida iaculis. In fringilla odio in felis ultricies porttitor.
+                Donec at purus libero. Vestibulum libero orci, commodo nec arcu
+                sit amet, commodo sollicitudin est. Vestibulum ultricies
+                malesuada tempor.
+              </p>
+            </section> -->
+            <!--//section-->
+          </article>
+          <!--//docs-article-->
+
+          <!-- <article class="docs-article" id="section-9">
+            <header class="docs-header">
+              <h1 class="docs-heading">FAQs</h1>
+              <section class="docs-intro">
+                <p>
+                  Section intro goes here. You can list all your FAQs using the
+                  format below.
+                </p>
+              </section> -->
+              <!--//docs-intro-->
+            <!-- </header>
+            <section class="docs-section" id="item-9-1">
+              <h2 class="section-heading">
+                Section Item 9.1 <small>(FAQ Category One)</small>
+              </h2>
+              <h5 class="pt-3">
+                <i class="fas fa-question-circle me-1"></i>What's sit amet quam
+                eget lacinia?
+              </h5>
+              <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+                penatibus et magnis dis parturient montes, nascetur ridiculus
+                mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+                quis, sem. Nulla consequat massa quis enim. Donec pede justo,
+                fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,
+                rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum
+                felis eu pede mollis pretium.
+              </p>
+              <h5 class="pt-3">
+                <i class="fas fa-question-circle me-1"></i>How to ipsum dolor
+                sit amet quam tortor?
+              </h5>
+              <p>
+                Donec sodales sagittis magna. Sed consequat, leo eget bibendum
+                sodales, augue velit cursus nunc, quis gravida magna mi a
+                libero. Fusce vulputate eleifend sapien. Vestibulum purus quam,
+                scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan
+                lorem in dui.
+              </p>
+              <h5 class="pt-3">
+                <i class="fas fa-question-circle me-1"></i>Can I bibendum
+                sodales?
+              </h5>
+              <p>
+                Fusce vulputate eleifend sapien. Vestibulum purus quam,
+                scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan
+                lorem in dui.
+              </p>
+              <h5 class="pt-3">
+                <i class="fas fa-question-circle me-1"></i>Where arcu sed urna
+                gravida?
+              </h5>
+              <p>
+                Aenean et sodales nisi, vel efficitur sapien. Quisque molestie
+                diam libero, et elementum diam mollis ac. In dignissim aliquam
+                est eget ullamcorper. Sed id sodales tortor, eu finibus leo.
+                Vivamus dapibus sollicitudin justo vel fermentum. Curabitur nec
+                arcu sed urna gravida lobortis. Donec lectus est, imperdiet eu
+                viverra viverra, ultricies nec urna.
+              </p>
+            </section> -->
+            <!--//section-->
+
+            <!-- <section class="docs-section" id="item-9-2">
+              <h2 class="section-heading">
+                Section Item 9.2 <small>(FAQ Category Two)</small>
+              </h2>
+              <h5 class="pt-3">
+                <i class="fas fa-question-circle me-1"></i>What's sit amet quam
+                eget lacinia?
+              </h5>
+              <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+                penatibus et magnis dis parturient montes, nascetur ridiculus
+                mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+                quis, sem. Nulla consequat massa quis enim. Donec pede justo,
+                fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,
+                rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum
+                felis eu pede mollis pretium.
+              </p>
+              <h5 class="pt-3">
+                <i class="fas fa-question-circle me-1"></i>How to ipsum dolor
+                sit amet quam tortor?
+              </h5>
+              <p>
+                Donec sodales sagittis magna. Sed consequat, leo eget bibendum
+                sodales, augue velit cursus nunc, quis gravida magna mi a
+                libero. Fusce vulputate eleifend sapien. Vestibulum purus quam,
+                scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan
+                lorem in dui.
+              </p>
+              <h5 class="pt-3">
+                <i class="fas fa-question-circle me-1"></i>Can I bibendum
+                sodales?
+              </h5>
+              <p>
+                Fusce vulputate eleifend sapien. Vestibulum purus quam,
+                scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan
+                lorem in dui.
+              </p>
+              <h5 class="pt-3">
+                <i class="fas fa-question-circle me-1"></i>Where arcu sed urna
+                gravida?
+              </h5>
+              <p>
+                Aenean et sodales nisi, vel efficitur sapien. Quisque molestie
+                diam libero, et elementum diam mollis ac. In dignissim aliquam
+                est eget ullamcorper. Sed id sodales tortor, eu finibus leo.
+                Vivamus dapibus sollicitudin justo vel fermentum. Curabitur nec
+                arcu sed urna gravida lobortis. Donec lectus est, imperdiet eu
+                viverra viverra, ultricies nec urna.
+              </p>
+            </section> -->
+            <!--//section-->
+
+            <!-- <section class="docs-section" id="item-9-3">
+              <h2 class="section-heading">
+                Section Item 9.3 <small>(FAQ Category Three)</small>
+              </h2>
+              <h5 class="pt-3">
+                <i class="fas fa-question-circle me-1"></i>How to dapibus
+                sollicitudin justo vel fermentum?
+              </h5>
+              <p>
+                Donec sodales sagittis magna. Sed consequat, leo eget bibendum
+                sodales, augue velit cursus nunc, quis gravida magna mi a
+                libero. Fusce vulputate eleifend sapien. Vestibulum purus quam,
+                scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan
+                lorem in dui.
+              </p>
+              <h5 class="pt-3">
+                <i class="fas fa-question-circle me-1"></i>How long bibendum
+                sodales?
+              </h5>
+              <p>
+                Fusce vulputate eleifend sapien. Vestibulum purus quam,
+                scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan
+                lorem in dui.
+              </p>
+              <h5 class="pt-3">
+                <i class="fas fa-question-circle me-1"></i>Where dapibus
+                sollicitudin?
+              </h5>
+              <p>
+                Aenean et sodales nisi, vel efficitur sapien. Quisque molestie
+                diam libero, et elementum diam mollis ac. In dignissim aliquam
+                est eget ullamcorper. Sed id sodales tortor, eu finibus leo.
+                Vivamus dapibus sollicitudin justo vel fermentum. Curabitur nec
+                arcu sed urna gravida lobortis. Donec lectus est, imperdiet eu
+                viverra viverra, ultricies nec urna.
+              </p>
+            </section> -->
+            <!--//section-->
+          <!-- </article> -->
+          <!--//docs-article-->
+
+          <footer class="footer">
+            <div class="container text-center py-5">
+              <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+              <small class="copyright"
+                >Designed with <span class="sr-only">love</span
+                ><i class="fas fa-heart" style="color: #fb866a"></i> by
+                <a
+                  class="theme-link"
+                  href="http://themes.3rdwavemedia.com"
+                  target="_blank"
+                  >Xiaoying Riley</a
+                >
+                for developers</small
+              >
+              <ul class="social-list list-unstyled pt-4 mb-0">
+                <li class="list-inline-item">
+                  <a href="#"><i class="fab fa-github fa-fw"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><i class="fab fa-twitter fa-fw"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><i class="fab fa-slack fa-fw"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><i class="fab fa-product-hunt fa-fw"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><i class="fab fa-facebook-f fa-fw"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><i class="fab fa-instagram fa-fw"></i></a>
+                </li>
+              </ul>
+              <!--//social-list-->
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <!--//docs-wrapper-->
+
+    <!-- Javascript -->
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Page Specific JS -->
+    <script src="assets/plugins/smoothscroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script src="assets/js/highlight-custom.js"></script>
+    <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>
+    <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
+    <script src="assets/js/docs.js"></script>
+  </body>
+</html>
