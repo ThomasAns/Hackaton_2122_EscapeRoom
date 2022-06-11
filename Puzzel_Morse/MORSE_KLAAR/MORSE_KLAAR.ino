@@ -36,6 +36,7 @@ void setup() {
     myservo.attach(12);
 
     Serial.begin(9600);
+    Wire.begin(); // join i2c bus (address optional for master)
     lcd.init();
     lcd.backlight();
     
@@ -53,7 +54,10 @@ void setup() {
     }
     Serial.println(code);
     meeTeGevenNummer = array[4];
-
+    Wire.beginTransmission(2); // transmit to device #2 puzzel2
+    Wire.write(meeTeGevenNummer);         // sends one byte  
+    Wire.endTransmission();    // stop transmitting
+    
     Serial.println("Voer de code in:");
     lcd.print("Voer de code in:");
 }

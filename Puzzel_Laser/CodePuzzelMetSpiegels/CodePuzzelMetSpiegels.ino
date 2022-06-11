@@ -5,8 +5,8 @@
 #include <LiquidCrystal_I2C.h>
 #include <SoftwareSerial.h>
 
-SoftwareSerial mySerial(10, 11); // RX, TX
-
+//SoftwareSerial mySerial(10, 11); // RX, TX //Serial no longer used -> I2C
+ 
 Servo servo1;
 Servo servo2;
 
@@ -25,14 +25,27 @@ void setup() {
   
   servo1.attach(3); 
   servo2.attach(5);
+
+  Wire.begin(3);                // join i2c bus with address #3
+  Wire.onReceive(receiveEvent); // register event
   
   Serial.begin(9600);
-    int* array = CodeGenerator::getRandomCode(38);
-    for (int i = 0; i < 4; i++) {
-      code += array[i];
-    }
+    //int* array = CodeGenerator::getRandomCode(38);
+    //for (int i = 0; i < 4; i++) {
+    //  code += array[i];
+    //}
+}
 
-
+void receiveEvent(int howMany){
+  int x = Wire.read();    // receive byte as an integer
+  Serial.println(x);         // print the integer
+  int* array = CodeGenerator::getRandomCode(x);
+  Serial.print("Solution From codegenerator: ");
+  for (int x=0; x<4; x++){
+    code += array[x];
+    Serial.print(testing[x]);  
+  }
+  Serial.println();
 }
 
 void loop() {

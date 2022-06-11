@@ -29,7 +29,7 @@ byte pin_column[COLUMN_NUM] = {5, 4, 3}; //connect to the column pinouts of the 
 
 Keypad keypad = Keypad( makeKeymap(keys), pin_rows, pin_column, ROW_NUM, COLUMN_NUM );
 
-String password = ""; // change your password here
+String password; // change your password here
 String SubStrng;
 String input_password;
 
@@ -50,17 +50,30 @@ void setup() {
   lcd.setCursor(2, 1);         // move cursor to   (2, 1)
   lcd.print("2de opdracht");   // print message at (2, 1)
   delay(2000);
-  int* array = CodeGenerator::getRandomCode(36);
-    for (int i = 0; i < 4; i++) {
-      password += array[i];
-    }
+  Wire.begin(2);                // join i2c bus with address #4
+  Wire.onReceive(receiveEvent); // register event
 
    myservo.attach(12);  // attaches the servo on pin 12 to the servo object
    myservo.write(pos);
 }
 
-
-
+void receiveEvent(int howMany){
+  int x = Wire.read();    // receive byte as an integer
+  Serial.println(x);         // print the integer
+  int* array = CodeGenerator::getRandomCode(x);
+  Serial.print("Solution From codegenerator: ");
+  for (int x=0; x<4; x++){
+    password = array[x];
+    Serial.print(testing[x]);  
+  }
+  Wire.beginTransmission(3); // transmit to device #3 Puzzel lazer
+  Wire.write(array[4]);         // sends one byte  
+  Wire.endTransmission();    // stop transmitting
+  Wire.beginTransmission(4); // transmit to device #4 Puzzel kluis
+  Wire.write(array[4]);         // sends one byte  
+  Wire.endTransmission();    // stop transmitting
+  Serial.println();
+}
 
 void loop() {
   while(t==0){
