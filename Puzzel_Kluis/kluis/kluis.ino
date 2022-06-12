@@ -122,6 +122,7 @@ int test1, test2;
 int results[4];            // array for the input values.
 int oplossing[4] = {1,2,3,4}; //test solution
 int testing[4];            //Solution filled with CodeGenerator, yes i know the names are flipped.
+boolean received = false; //to stop listeng for initial random seed input.
 boolean correct = false;
 
 ///////////////////////////////////////// Setup ///////////////////////////////////
@@ -290,6 +291,7 @@ void loop() {
     if(correct) {
       Serial.println("Password is correct");
       delay(1000);
+      BadgePermission = false;
       do {
         //exit(0); //temp exit loop
         //TODO code: Sweep servo open final door
@@ -339,7 +341,8 @@ void loop() {
           else {
             if ( findID(readCard) ) { // If not, see if the card is in the EEPROM
               Serial.println(F("Welcome, You shall pass"));
-              granted(300);         // Open the door lock for 300 ms
+              //granted(300);         // Open the door lock for 300 ms
+              granted();         // Open the door lock
             }
             else {      // If not, show that the ID was not valid
               Serial.println(F("You shall not pass"));
@@ -350,19 +353,21 @@ void loop() {
       } while(!BadgePermission);
     } else {
       Serial.println("Wrong password");
+      BadgePermission = false;
     } 
 }
 
 /////////////////////////////////////////  Access Granted    ///////////////////////////////////
-void granted ( uint16_t setDelay) {
-  digitalWrite(blueLed, LED_OFF);   // Turn off blue LED
-  digitalWrite(redLed, LED_OFF);  // Turn off red LED
-  digitalWrite(greenLed, LED_ON);   // Turn on green LED
-  digitalWrite(servo, LOW);     // Unlock door!
-  BadgePermission = true;
-  delay(setDelay);          // Hold door lock open for given seconds
-  digitalWrite(servo, HIGH);    // Relock door
-  delay(1000);            // Hold green LED on for a second
+//void granted ( uint16_t setDelay) { //open only for a given time
+void granted () {                     //stay ope,
+  digitalWrite(blueLed, LED_OFF);     // Turn off blue LED
+  digitalWrite(redLed, LED_OFF);      // Turn off red LED
+  digitalWrite(greenLed, LED_ON);     // Turn on green LED
+  digitalWrite(servo, LOW);           // Unlock door!
+  BadgePermission = true;             
+  //delay(setDelay);                  // Hold door lock open for given seconds
+  digitalWrite(servo, HIGH);          // Relock door
+  delay(1000);                        // Hold green LED on for a second
 }
 
 ///////////////////////////////////////// Access Denied  ///////////////////////////////////
@@ -370,7 +375,8 @@ void denied() {
   digitalWrite(greenLed, LED_OFF);  // Make sure green LED is off
   digitalWrite(blueLed, LED_OFF);   // Make sure blue LED is off
   digitalWrite(redLed, LED_ON);   // Turn on red LED
-  delay(1000);
+  BadgePermission = false;
+  delay(2000);
 }
 
 
@@ -590,15 +596,18 @@ bool monitorWipeButton(uint32_t interval) {
 ///////////////////////////////////////// Receive I2C Input ///////////////////////////////////
 void receiveEvent(int howMany)
 {
-  int x = Wire.read();       // receive byte as an integer
-  Serial.println(x);         // print the integer
-  int* array = CodeGenerator::getRandomCode(x);
-  Serial.print("Solution From codegenerator: ");
-  for (int x=0; x<4; x++){
-    testing[x] = array[x];
-    Serial.print(testing[x]);  
+  if (!received) {
+    int x = Wire.read();       // receive byte as an integer
+    Serial.println(x);         // print the integer
+    int* array = CodeGenerator::getRandomCode(x);
+    Serial.print("Solution From codegenerator: ");
+    for (int x=0; x<4; x++){
+      testing[x] = array[x];
+      Serial.print(testing[x]);  
+    }
+    received = true;
+    Serial.println();
   }
-  Serial.println();
 }
 
 ///////////////////////////////////////// ir-receiver value check ///////////////////////////////////
