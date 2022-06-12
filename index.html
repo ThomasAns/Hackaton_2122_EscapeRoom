@@ -1,30 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./images/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./images/favicon-16x16.png"
-    />
-    <link rel="manifest" href="./images/site.webmanifest" />
-    <title>
-      Hackaton - EscapeRoom
-    </title>
+    <title>Hackathon - EscapeRoom</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -33,46 +13,59 @@
       href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="scribbler-global.css" />
-    <link rel="stylesheet" href="scribbler-doc.css" />
-    <link rel="author" href="humans.txt" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/scribbler-global.css" />
+    <link rel="stylesheet" href="css/scribbler-doc.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="author" href="#" />
+   <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./img/site.webmanifest" />
   </head>
   <body>
     <div class="doc__bg"></div>
     <nav class="header">
-      <div class="logo">
-        <img
-          class="logo-icon me-2"
-          src="./images/hackaton-logo.svg"
-          alt="logo"
-        />
-        <h1 class="logo">Escape <span class="logo__thin">Room</span></h1>
+      <div class="logo flex">
+        <img src="img/hackaton-logo.svg" alt="Logo of a lock" />
+        <h1>Hackaton Escape<span class="logo__thin">Room</span></h1>
       </div>
-      <ul class="menu">
+
+           <ul class="menu">
         <div class="menu__item toggle"><span></span></div>
-        <li class="menu__item">
-          <a href="https://github.com/ThomasAns/Hackaton_2122_EscapeRoom/tree/main" class="link link--dark"
-            ><i class="fa fa-github"></i> Github</a
-          >
-        </li>
+        <li class="menu__item"><a href="" class="link link&#45;&#45;dark"><i class="fa fa-github"></i> Github</a></li>
       </ul>
     </nav>
 
     <div class="wrapper">
       <aside class="doc__nav">
-        <ul>
+        <ul style="position: sticky !important">
           <li class="js-btn selected">Introductie</li>
-          <li class="js-btn">1. Random seed</li>
-          <li class="js-btn">2. Puzzel morse</li>
-          <li class="js-btn">3. Puzzel Afstand</li>
-          <li class="js-btn">4. Puzzel Lazer</li>
-          <li class="js-btn">5. Puzzel Kluis</li>
+          <li class="js-btn">1. Team</li>
+          <li class="js-btn">2. Random seed</li>
+          <li class="js-btn">3. Puzzel morse</li>
+          <li class="js-btn">4. Puzzel Afstand</li>
+          <li class="js-btn">5. Puzzel Lazer</li>
+          <li class="js-btn">6. Puzzel Kluis</li>
+          <li class="js-btn">Resources</li>
         </ul>
       </aside>
       <article class="doc__content">
         <section class="js-section">
-          <h2 class="section__title">Introductie</h2>
+          <h1 class="" style="font-size: 2em">Introductie</h1>
           <p>
             Je wilt inbreken in een bank. Je moet eerst de juist keycard vinden
             van de bankmedewerkers. Als je de keycard hebt kan je de code van
@@ -80,44 +73,15 @@
             je naar de kluis gaan, om deze te openen moet je naar de code zoeken
             in de bank zelf.
           </p>
-          <h2>Team</h2>
-          <table id="customers">
-            <tbody>
-              <tr>
-                <td>Michiel Van Himbeeck</td>
-                <td>Web&Mobile</td>
-                <td>Random seed</td>
-              </tr>
-              <tr>
-                <td>Milan Vernimmen</td>
-                <td>Infrastructuur</td>
-                <td>Morse</td>
-              </tr>
-              <tr>
-                <td>Joran Buddaert</td>
-                <td>Elektronica</td>
-                <td>Afstand</td>
-              </tr>
-              <tr>
-                <td>Quinten Conil</td>
-                <td>Web&Mobile</td>
-                <td>Lazer</td>
-              </tr>
-              <tr>
-                <td>Thomas Anseeuw</td>
-                <td>Web&Mobile</td>
-                <td>Kluis</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <section>
-          <h3 class="section__title">Flowchart:</h3>
-          <img src="./images/Hackaton_.svg" alt="" width="80%" />
+          <h2>Flowchart:</h2>
+          <img src="./img/Hackaton_.svg" alt="" />
         </section>
         <section class="js-section">
-          <h2 class="section__title">1. Random seed</h2>
-                  <p>
+          <h2 class="" style="font-size: 2em">1. Team</h2>
+        </section>
+        <section class="js-section">
+          <h2 class="section__title">2. Random seed</h2>
+          <p>
             Deze library behandelt de implementatie van de random seed.
 De library heeft 1 publieke methode die een int als input krijgt en een pseudo random code van 4 cijfers terug geeft in de vorm van een int* (int pointer), alsook een extra 5e waarde die gebruikt kan worden als input voor de volgende keer dat deze methode wordt opgeroepen.
 Op deze manier is er slechts 1 keer een ‘random’ input van de gebruiker zelf vereist.
@@ -181,12 +145,12 @@ double CodeGenerator::getAbs(double num) {
     return num > 0 ? num : -num;
 }
         </pre>
-              <h3>Bronnen</h3>
-        <a href="https://stackoverflow.com/questions/16801687/javascript-random-ordering-with-seed" style="color: blue;">https://stackoverflow.com/questions/16801687/javascript-random-ordering-with-seed</a>
+        <h3>Bronnen</h3>
+        <a href="https://stackoverflow.com/questions/16801687/javascript-random-ordering-with-seed">stackoverflow: javascript-random-ordering-with-seed</a>
           <hr />
         </section>
         <section class="js-section">
-          <h2 class="section__title">2. Puzzel morse</h2>
+          <h2 class="section__title">3. Puzzel morse</h2>
           <h3>Uitleg</h3>
           <p>
             Je kan op een knopje drukken om de morsecode te laten spelen. Als je
@@ -195,7 +159,7 @@ double CodeGenerator::getAbs(double num) {
             op de pad en hij zal programmeren.
           </p>
           <h3>Schema</h3>
-          <img src="./images/SCHEMA.png" alt="" width="100%" />
+          <img src="./img/SCHEMA.png" alt="" width="100%" />
           <h3>Code</h3>
           <pre class="lang:c# decode:true prettyprint code--block">
 <code>#include <code><</code>CodeGenerator.h>
@@ -411,7 +375,7 @@ void speelStreep() {
         </pre>
         </section>
         <section class="js-section">
-          <h2 class="section__title">3. Puzzel Afstand</h2>
+          <h2 class="section__title">4. Puzzel Afstand</h2>
           <h3>Uitleg</h3>
           <p>
             Bij deze puzzel moet je een afstandsensor geruiken afhankelijk van
@@ -419,7 +383,7 @@ void speelStreep() {
             waarden in het keypad ingeeft zal je het infrarood bakje krijgen.
           </p>
           <h3>Schema</h3>
-          <img src="./images/Schema_afstand.png" alt="" width="100%" />
+          <img src="./img/Schema_afstand.png" alt="" width="100%" />
           <h3>Code</h3>
           <pre class="lang:cpp decode:true prettyprint code--block">
 #include <CodeGenerator.h>
@@ -599,7 +563,7 @@ void loop() {
         </pre>
         </section>
         <section class="js-section">
-          <h2 class="section__title">4. Puzzel Lazer</h2>
+          <h2 class="section__title">5. Puzzel Lazer</h2>
           <h3>Uitleg</h3>
           <p>
             Bij deze puzzel moet je een lichtsensor activeren doormiddel van een
@@ -608,7 +572,7 @@ void loop() {
             lichtsensor activeert krijg je de eindcode voor het infrarood bakje.
           </p>
           <h3>Schema</h3>
-          <img src="./images/PuzzleLaserSchema1.PNG" alt="" />
+          <img src="./img/PuzzleLaserSchema1.PNG" alt="" />
           <h3>Code</h3>
           <pre class="lang:cpp decode:true prettyprint code--block">
 #include <CodeGenerator.h>
@@ -688,7 +652,7 @@ void loop() {
         </pre>
         </section>
         <section class="js-section">
-          <h2 class="section__title">5. Puzzel Kluis</h2>
+          <h2 class="section__title">6. Puzzel Kluis</h2>
           <p>
             Deze puzzel is de eindpuzzel van het spel. Het is een kluis die je
             moet openen. Je zal deze moeten openen door eerste infrarood code,
@@ -710,9 +674,9 @@ void loop() {
             opgeslagen heeft deze toegang tot de kluis en is de puzzel
             afgelopen.
           </p>
-          <img src="./images/blokschema_kluis.png" alt="" width="100%" />
+          <img src="./img/blokschema_kluis.png" alt="" width="100%" />
           <h3>Schema</h3>
-          <img src="./images/Puzzel_kluis.PNG" alt="" width="100%" />
+          <img src="./img/Puzzel_kluis.PNG" alt="" width="100%" />
           <h3>Code</h3>
           <pre class="lang:c# decode:true prettyprint code--block lit">
 <code class="comment">
@@ -722,80 +686,20 @@ void loop() {
   +
   Rfid acces code modified by Thomas Anseeuw from an example. The example can be found on: 'https://github.com/miguelbalboa/rfid'
   Example sketch/program showing An Arduino Door Access Control
-  --------------------------------------------------------------------------------------------------------------------
-  *Simple Work Flow (not limited to) :
-                                     +-----------+
-  +---------------------------------->RECEIVE I2C^------------------------------------------+
-  |                                        |                                                |
-  |                                        |                                                |
-  |                              +---------v----------+                                     |
-  |                              |Generate random seed|                                     |
-  |                              +---------+----------+                                     |
-  |                                        |                                                |
-  |                                        |                                                |
-  |                              +---------v----------+                                     |
-  |                              | Guess correct pass |<------------+                       |
-  |                              +---------+----------+             |                       |
-  |                                        |          |             |                       |
-  |                                        |          +--> False ---+                       |
-  |                             +----------v------------+                                   |
-  |                             |ir-password is correct,|                                   |
-  |                             +----------+------------+                                   |
-  |                                        |                                                |
-  |                                        |                                                | 
-  |                                   +----v-----+                                          |
-  |                                    READ TAGS+^                                          |
-  |                              +--------------------+                                     |
-  |                              |                    |                                     |
-  |                              |                    |                                     |
-  |                         +----v-----+        +-----v----+                                |
-  |                         |MASTER TAG|        |OTHER TAGS|                                |
-  |                         +--+-------+        ++-------------+                            |
-  |                            |                 |             |                            |
-  |                            |                 |             |                            |
-  |                      +-----v---+        +----v----+   +----v------+                     |
-  |         +------------+READ TAGS+---+    |KNOWN TAG|   |UNKNOWN TAG|                     |
-  |         |            +-+-------+   |    +-----------+ +------------------+              |
-  |         |              |           |                |                    |              |
-  |    +----v-----+   +----v----+   +--v--------+     +-v----------+  +------v----+         |
-  |    |MASTER TAG|   |KNOWN TAG|   |UNKNOWN TAG|     |GRANT ACCESS|  |DENY ACCESS|         |
-  |    +----------+   +---+-----+   +-----+-----+     +-----+------+  +-----+-----+         |
-  |                       |               |                 |               |               |
-  |       +----+     +----v------+     +--v---+             |               +--------------->
-  +-------+EXIT|     |DELETE FROM|     |ADD TO|             |                               |
-          +----+     |  EEPROM   |     |EEPROM|             |                               |
-                     +-----------+     +------+             +-------------------------------+
-            
-            
-  Use a Master Card which is act as Programmer then you can able to choose card holders who will granted access or not
-            
-* **Easy User Interface**
-            
-  Just one RFID tag needed whether Delete or Add Tags. You can choose to use Leds for output or Serial LCD module to inform users.
-            
-* **Stores Information on EEPROM**
-            
-  Information stored on non volatile Arduino's EEPROM memory to preserve Users' tag and Master Card. No Information lost
-  if power lost. EEPROM has unlimited Read cycle but roughly 100,000 limited Write cycle.
-            
-* **Security**
-  To keep it simple it's only going to use Tag's Unique IDs. It's simple and not hacker proof.
-            
-  @license Released into the public domain.
-            
+  -------------------------------------------------------------------------------------------------------------------- 
+         
   Typical pin layout used:
    -----------------------------------------------------------------------------------------
-               MFRC522      Arduino       Arduino   Arduino    Arduino          Arduino
-               Reader/PCD   Uno/101       Mega      Nano v3    Leonardo/Micro   Pro Micro
-   Signal      Pin          Pin           Pin       Pin        Pin              Pin
+   ____________MFRC522______Arduino_______Arduino___Arduino____Arduino__________Arduino
+   ____________Reader/PCD___Uno/101_______Mega______Nano v3____Leonardo/Micro___Pro Micro
+   Signal______Pin__________Pin___________Pin_______Pin________Pin______________Pin
    -----------------------------------------------------------------------------------------
-   RST/Reset   RST          9             5         D9         RESET/ICSP-5     RST
-   SPI SS      SDA(SS)      10            53        D10        10               10
-   SPI MOSI    MOSI         11 / ICSP-4   51        D11        ICSP-4           16
-   SPI MISO    MISO         12 / ICSP-1   50        D12        ICSP-1           14
-   SPI SCK     SCK          13 / ICSP-3   52        D13        ICSP-3           15
-*/</code>
-<code class="comment">/*
+   RST/Reset___RST__________9_____________5_________D9_________RESET/ICSP-5_____RST
+   SPI SS______SDA(SS)______10____________53________D10________10_______________10
+   SPI MOSI____MOSI_________11 / ICSP-4___51________D11________ICSP-4___________16
+   SPI MISO____MISO_________12 / ICSP-1___50________D12________ICSP-1___________14
+   SPI SCK_____SCK__________13 / ICSP-3___52________D13________ICSP-3___________15
+
    IR-Receiver pin layout left -> right: 
    rs  ->  pin 2
    gnd ->  gnd
@@ -1309,6 +1213,7 @@ void waardes(){
     </div>
 
     <footer class="footer">
+      <p>&copy; 2022 - Hackathon Team 4</a></p>
       Scribbler is a free HTML template created exclusively for
       <a
         href="https://tympanus.net/codrops/"
@@ -1318,9 +1223,7 @@ void waardes(){
       >.
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script>
-      hljs.initHighlightingOnLoad();
-    </script>
-    <script src="scribbler.js"></script>
+    <script src="https://content.arduino.cc/assets/arduinoSketchIframeResizer.js"></script>
+    <script src="js/scribbler.js"></script>
   </body>
 </html>
