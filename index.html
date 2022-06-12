@@ -117,10 +117,10 @@
         </section>
         <section class="js-section">
           <h2 class="section__title">1. Random seed</h2>
-          <p>
-            Voor random seed te implementeren hebben we een library geschreven.
-            deze roep je op met een start waarde en geeft dan array[5] terug. De
-            eerste 4 array waarde zijn voor je
+                  <p>
+            Deze library behandelt de implementatie van de random seed.
+De library heeft 1 publieke methode die een int als input krijgt en een pseudo random code van 4 cijfers terug geeft in de vorm van een int* (int pointer), alsook een extra 5e waarde die gebruikt kan worden als input voor de volgende keer dat deze methode wordt opgeroepen.
+Op deze manier is er slechts 1 keer een ‘random’ input van de gebruiker zelf vereist.
           </p>
           <h3>Code</h3>
           <h4>CodeGenerator.h</h4>
@@ -181,6 +181,8 @@ double CodeGenerator::getAbs(double num) {
     return num > 0 ? num : -num;
 }
         </pre>
+              <h3>Bronnen</h3>
+        <a href="https://stackoverflow.com/questions/16801687/javascript-random-ordering-with-seed" style="color: blue;">https://stackoverflow.com/questions/16801687/javascript-random-ordering-with-seed</a>
           <hr />
         </section>
         <section class="js-section">
