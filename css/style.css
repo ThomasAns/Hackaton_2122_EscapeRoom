@@ -62,7 +62,7 @@ pre.prettyprint {
   /* white-space: pre; */
   background-color: var(--bg-color);
   padding-top: 0.5rem;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 /* Code Highlighter */
