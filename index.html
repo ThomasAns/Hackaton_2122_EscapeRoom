@@ -46,7 +46,7 @@
 
            <ul class="menu">
         <div class="menu__item toggle"><span></span></div>
-        <li class="menu__item"><a href="https://github.com/ThomasAns/Hackaton_2122_EscapeRoom" class="link link&#45;&#45;dark"><i class="fa fa-github"></i> Github</a></li>
+        <li class="menu__item"><a href="https://github.com/ThomasAns/Hackaton_2122_EscapeRoom" class="link link&#45;&#45;dark" ><i class="fa fa-github"></i> Github</a></li>
       </ul>
     </nav>
 
@@ -179,9 +179,10 @@ int* CodeGenerator::getRandomCode(int input) {
 double CodeGenerator::getAbs(double num) {
     return num > 0 ? num : -num;
 }
+
         </pre>
-        <h3>Bronnen</h3>
-        <a href="https://stackoverflow.com/questions/16801687/javascript-random-ordering-with-seed">stackoverflow: javascript-random-ordering-with-seed</a>
+        <h3>Bronnen:</h3>
+          <a href="https://stackoverflow.com/questions/16801687/javascript-random-ordering-with-seed" style="text-decoration: underline;">stackoverflow: javascript-random-ordering-with-seed</a>
           <hr />
         </section>
         <section id="3" class="js-section">
@@ -197,7 +198,7 @@ double CodeGenerator::getAbs(double num) {
           <img src="./img/Schema_morse.png" alt="" width="100%" />
           <h3>Code</h3>
           <pre class="lang:c# decode:true prettyprint code--block">
-<code>#include <code><</code>CodeGenerator.h>
+<code>#include</code> <code><</code>CodeGenerator.h>
 #include <code><</code>Servo.h>
 #include <code><</code>Keypad.h>
 #include <code><</code>LiquidCrystal_I2C.h>
@@ -407,6 +408,7 @@ void speelStreep() {
     noTone(bieper);
     delay(Eenheid);
 }
+
         </pre>
         </section>
         <section id="4" class="js-section">
@@ -485,7 +487,7 @@ void receiveEvent(int howMany){
   Serial.println(x);         // print the integer
   int* array = CodeGenerator::getRandomCode(x);
   Serial.print("Solution From codegenerator: ");
-  for (int x=0; x<4; x++){
+  for (int x=0; x<code><</code>4; x++){
     password = array[x];
     Serial.print(testing[x]);  
   }
@@ -514,7 +516,7 @@ void loop() {
 
   Serial.println(password);
   
-  if(distance > 3 && distance < 5){
+  if(distance > 3 && distance <code><</code> 5){
     String SubStrng = password.substring(0,1);
     lcd.clear();
     lcd.setCursor(0, 0);         // move cursor to   (0, 0)
@@ -523,7 +525,7 @@ void loop() {
     lcd.print("is "+SubStrng);
     delay(100);
     }
-    else if(distance > 9&& distance < 11){
+    else if(distance > 9&& distance <code><</code> 11){
     String SubStrng = password.substring(4,3);
     lcd.clear();
     lcd.setCursor(0, 0);           // move cursor to   (0, 0)
@@ -532,7 +534,7 @@ void loop() {
     lcd.print("is "+SubStrng);     
     delay(100);
     }
-     else if(distance > 15 && distance < 17){
+     else if(distance > 15 && distance <code><</code> 17){
     String SubStrng = password.substring(2,3);
     lcd.clear();
     lcd.setCursor(0, 0);         // move cursor to   (0, 0)
@@ -541,7 +543,7 @@ void loop() {
     lcd.print("is "+SubStrng);        
     delay(100);
     }
-     else if(distance > 21 && distance < 23){
+     else if(distance > 21 && distance <code><</code> 23){
     String SubStrng = password.substring(3,4);
     lcd.clear();
     lcd.setCursor(0, 0);         // move cursor to   (0, 0)
@@ -592,9 +594,9 @@ void loop() {
       input_password += key; // append new character to input password string
     }
   }
-  }
-  
+  } 
 } 
+
         </pre>
         </section>
         <section id="5" class="js-section">
@@ -643,7 +645,7 @@ void setup() {
   
   Serial.begin(9600);
     //int* array = CodeGenerator::getRandomCode(38);
-    //for (int i = 0; i < 4; i++) {
+    //for (int i = 0; i <code><</code> 4; i++) {
     //  code += array[i];
     //}
 }
@@ -680,10 +682,11 @@ void loop() {
     lcd.print(code);
   }
 
-  if  (analogRead(lichtsensor) < 350) {
+  if  (analogRead(lichtsensor) <code><</code> 350) {
     lcd.clear();
   }
 }
+
         </pre>
         </section>
         <section id="6" class="js-section">
@@ -1243,6 +1246,19 @@ void waardes(){
         </pre>
           <h3>Code Uitleg</h3>
           <p></p>
+          <h3 class="section__title">Bronnen:</h3>
+          <p><a href="https://docs.arduino.cc/learn/communication/wire" style="text-decoration: underline;">refresher op I2C protocol voor het ontvangen van de random seed waarde</a></p>
+          <p>SPI en I2C tegelijkertijd op dezelfde arduino voor rfid en infrarood <a href="https://forum.arduino.cc/t/i2c-and-spi-simultaneously/229096" style="text-decoration: underline;">Arduino forum</a></p>
+          <p>RFID code <a href="https://github.com/miguelbalboa/rfid" style="text-decoration: underline;">examples</a></p>
+        </section>
+        <br class="js-section">
+          <h2 class="section__title">Resources</h2>
+          <p><a href="https://www.tinkercad.com/" style="text-decoration: underline;">TinkerCad voor tekenen schemas</a></p>
+          <p><a href="https://www.lucid.app/" style="text-decoration: underline;">lucid app voor tekenen Flowchart</a></p>
+          <p></p>
+          <p><a href="https://github.com/amiechen/codrops-scribbler" style="text-decoration: underline;">Website template</a></p>
+          <p><a href="https://github.com/googlearchive/code-prettify" style="text-decoration: underline;">Highlighting code examples</a></p>
+          
         </section>
       </article>
     </div>

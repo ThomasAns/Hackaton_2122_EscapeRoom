@@ -55,26 +55,28 @@ td a {
   overflow: auto;
   height: 500px;
 }
-code {
-  color: #0a5e62;
-}
 pre.prettyprint {
   /* display: block; */
   /* white-space: pre; */
   background-color: var(--bg-color);
   padding-top: 0.5rem;
-  overflow: hidden;
+  resize: vertical;
+  overflow: auto;
 }
 
 /* Code Highlighter */
+code {
+  /* color: #0a5e62; */
+  color: #0384da;
+}
 pre .include {
   color: #bb15d1;
 } /* decimal         - lightgreen */
-pre .comment {
-  color: #038f03;
-}
 pre .library {
   color: #e97d01;
+}
+pre .comment {
+  color: #038f03;
 }
 pre .type {
   color: #0384da;
