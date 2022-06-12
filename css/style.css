@@ -46,6 +46,9 @@ section {
 .js-section img {
   width: 100%;
 }
+td a {
+  text-decoration: underline;
+}
 .code--block {
   resize: vertical;
   overflow: auto;

@@ -77,9 +77,44 @@
           <img src="./img/Hackaton_.svg" alt="" />
         </section>
         <section class="js-section">
-          <h2 class="" style="font-size: 2em">1. Team</h2>
+          <h2 class="section__title">1. Team</h2>
+                              <table id="customers">
+            <tbody>
+              <tr style="background-color: var(--bg-color);">
+                <td>#</td>
+                <td>Naam</td>
+                <td>Onderdeel</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Michiel Van Himbeeck</td>
+                <td><a href="#2">Random seed</a></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Milan Vernimmen</td>
+                <td><a href="#3">Morse</a></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Joran Buddaert</td>
+                <td><a href="#4">Afstand</a></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Quiten Conil</td>
+                <td><a href="#5">Lazer</a></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Thomas Anseeuw</td>
+                <td><a href="#6">Kluis</a></td>
+              </tr>
+            </tbody>
+
+          </table>
         </section>
-        <section class="js-section">
+        <section id="2" class="js-section">
           <h2 class="section__title">2. Random seed</h2>
           <p>
             Deze library behandelt de implementatie van de random seed.
@@ -149,7 +184,7 @@ double CodeGenerator::getAbs(double num) {
         <a href="https://stackoverflow.com/questions/16801687/javascript-random-ordering-with-seed">stackoverflow: javascript-random-ordering-with-seed</a>
           <hr />
         </section>
-        <section class="js-section">
+        <section id="3" class="js-section">
           <h2 class="section__title">3. Puzzel morse</h2>
           <h3>Uitleg</h3>
           <p>
@@ -159,7 +194,7 @@ double CodeGenerator::getAbs(double num) {
             op de pad en hij zal programmeren.
           </p>
           <h3>Schema</h3>
-          <img src="./img/SCHEMA.png" alt="" width="100%" />
+          <img src="./img/Schema_morse.png" alt="" width="100%" />
           <h3>Code</h3>
           <pre class="lang:c# decode:true prettyprint code--block">
 <code>#include <code><</code>CodeGenerator.h>
@@ -374,7 +409,7 @@ void speelStreep() {
 }
         </pre>
         </section>
-        <section class="js-section">
+        <section id="4" class="js-section">
           <h2 class="section__title">4. Puzzel Afstand</h2>
           <h3>Uitleg</h3>
           <p>
@@ -562,7 +597,7 @@ void loop() {
 } 
         </pre>
         </section>
-        <section class="js-section">
+        <section id="5" class="js-section">
           <h2 class="section__title">5. Puzzel Lazer</h2>
           <h3>Uitleg</h3>
           <p>
@@ -651,7 +686,7 @@ void loop() {
 }
         </pre>
         </section>
-        <section class="js-section">
+        <section id="6" class="js-section">
           <h2 class="section__title">6. Puzzel Kluis</h2>
           <p>
             Deze puzzel is de eindpuzzel van het spel. Het is een kluis die je
