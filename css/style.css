@@ -12,8 +12,9 @@
 }
 nav {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  margin: 0.5rem;
 }
 #menu {
   right: 0;
@@ -62,7 +63,7 @@ pre.prettyprint {
   /* white-space: pre; */
   background-color: var(--bg-color);
   padding-top: 0.5rem;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 /* Code Highlighter */
@@ -77,4 +78,12 @@ pre .library {
 }
 pre .type {
   color: #0384da;
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 }
