@@ -65,10 +65,10 @@ pre.prettyprint {
 }
 
 /* Code Highlighter */
-code {
-  /* color: #0a5e62; */
+/* code {
+  //color: #0a5e62;
   color: #0384da;
-}
+} */
 pre .include {
   color: #bb15d1;
 } /* decimal         - lightgreen */
@@ -80,6 +80,9 @@ pre .comment {
 }
 pre .type {
   color: #0384da;
+}
+pre .cod {
+  color: #43cbf5;
 }
 
 @media screen and (min-width: 768px) {

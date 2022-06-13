@@ -149,7 +149,7 @@ void setup() {
   // This also useful to just redefine the Master Card
   // You can keep other EEPROM records just write other than 143 to EEPROM address 1
   // EEPROM address 1 should hold magical number which is '143'
-  if (EEPROM.read(1) != 143) {
+  /*if (EEPROM.read(1) != 143) {
     Serial.println(F("No Master Card Defined"));
     Serial.println(F("Scan A PICC to Define as Master Card"));
     do {
@@ -177,7 +177,7 @@ void setup() {
   Serial.println(F("Everything is ready"));
   Serial.println(F("Waiting PICCs to be scanned"));
   cycleLeds();    // Everything ready lets give user some feedback by cycling leds
-  
+  */
   IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK, USE_DEFAULT_FEEDBACK_LED_PIN);
   Serial.print("Ready to receive IR signals at pin ");
   Serial.println(IR_RECEIVE_PIN);
@@ -185,6 +185,61 @@ void setup() {
 
 ///////////////////////////////////////// Main Loop ///////////////////////////////////
 void loop() {
+  do {
+        successRead = getID();  // sets successRead to 1 when we get read from reader otherwise 0
+        if (programMode) {
+          cycleLeds();              // Program Mode cycles through Red Green Blue waiting to read a new card
+        }
+        else {
+          normalModeOn();     // Normal mode, blue Power LED is on, all others are off
+        }
+        } while (!successRead);   //the program will not go further while you are not getting a successful read
+        if (programMode) {
+          if ( isMaster(readCard) ) { //When in program mode check First If master card scanned again to exit program mode
+            Serial.println(F("Master Card Scanned"));
+            Serial.println(F("Exiting Program Mode"));
+            Serial.println(F("-----------------------------"));
+            programMode = false;
+            return;
+          } else {
+            if ( findID(readCard) ) { // If scanned card is known delete it
+              Serial.println(F("I know this PICC, removing..."));
+              deleteID(readCard);
+              Serial.println("-----------------------------");
+              Serial.println(F("Scan a PICC to ADD or REMOVE to EEPROM"));
+            }
+            else {                    // If scanned card is not known add it
+              Serial.println(F("I do not know this PICC, adding..."));
+              writeID(readCard);
+              Serial.println(F("-----------------------------"));
+              Serial.println(F("Scan a PICC to ADD or REMOVE to EEPROM"));
+            }
+          }
+        } else {
+          if ( isMaster(readCard)) {    // If scanned card's ID matches Master Card's ID - enter program mode
+            programMode = true;
+            Serial.println(F("Hello Master - Entered Program Mode"));
+            uint8_t count = EEPROM.read(0);   // Read the first Byte of EEPROM that
+            Serial.print(F("I have "));     // stores the number of ID's in EEPROM
+            Serial.print(count);
+            Serial.print(F(" record(s) on EEPROM"));
+            Serial.println("");
+            Serial.println(F("Scan a PICC to ADD or REMOVE to EEPROM"));
+            Serial.println(F("Scan Master Card again to Exit Program Mode"));
+            Serial.println(F("-----------------------------"));
+          }
+          else {
+            if ( findID(readCard) ) { // If not, see if the card is in the EEPROM
+              Serial.println(F("Welcome, You shall pass"));
+              //granted(300);         // Open the door lock for 300 ms
+              granted(300);         // Open the door lock
+            }
+            else {      // If not, show that the ID was not valid
+              Serial.println(F("You shall not pass"));
+              denied();
+            }
+          }
+        }
   // do {
   //   successRead = getID();  // sets successRead to 1 when we get read from reader otherwise 0
   //   if (programMode) {
@@ -291,66 +346,12 @@ void loop() {
     if(correct) {
       Serial.println("Password is correct");
       delay(1000);
-      //BadgePermission = false;
-      do {
         //exit(0); //temp exit loop
         //TODO code: Sweep servo open final door
-        do {
-        successRead = getID();  // sets successRead to 1 when we get read from reader otherwise 0
-        if (programMode) {
-          cycleLeds();              // Program Mode cycles through Red Green Blue waiting to read a new card
+        if(BadgePermission){
+            granted(10000);
         }
-        else {
-          normalModeOn();     // Normal mode, blue Power LED is on, all others are off
-        }
-        } while (!successRead);   //the program will not go further while you are not getting a successful read
-        if (programMode) {
-          if ( isMaster(readCard) ) { //When in program mode check First If master card scanned again to exit program mode
-            Serial.println(F("Master Card Scanned"));
-            Serial.println(F("Exiting Program Mode"));
-            Serial.println(F("-----------------------------"));
-            programMode = false;
-            return;
-          } else {
-            if ( findID(readCard) ) { // If scanned card is known delete it
-              Serial.println(F("I know this PICC, removing..."));
-              deleteID(readCard);
-              Serial.println("-----------------------------");
-              Serial.println(F("Scan a PICC to ADD or REMOVE to EEPROM"));
-            }
-            else {                    // If scanned card is not known add it
-              Serial.println(F("I do not know this PICC, adding..."));
-              writeID(readCard);
-              Serial.println(F("-----------------------------"));
-              Serial.println(F("Scan a PICC to ADD or REMOVE to EEPROM"));
-            }
-          }
-        } else {
-          if ( isMaster(readCard)) {    // If scanned card's ID matches Master Card's ID - enter program mode
-            programMode = true;
-            Serial.println(F("Hello Master - Entered Program Mode"));
-            uint8_t count = EEPROM.read(0);   // Read the first Byte of EEPROM that
-            Serial.print(F("I have "));     // stores the number of ID's in EEPROM
-            Serial.print(count);
-            Serial.print(F(" record(s) on EEPROM"));
-            Serial.println("");
-            Serial.println(F("Scan a PICC to ADD or REMOVE to EEPROM"));
-            Serial.println(F("Scan Master Card again to Exit Program Mode"));
-            Serial.println(F("-----------------------------"));
-          }
-          else {
-            if ( findID(readCard) ) { // If not, see if the card is in the EEPROM
-              Serial.println(F("Welcome, You shall pass"));
-              //granted(300);         // Open the door lock for 300 ms
-              granted();         // Open the door lock
-            }
-            else {      // If not, show that the ID was not valid
-              Serial.println(F("You shall not pass"));
-              denied();
-            }
-          }
-        }
-      } while(!BadgePermission);
+        
     } else {
       Serial.println("Wrong password");
       BadgePermission = false;
@@ -358,8 +359,8 @@ void loop() {
 }
 
 /////////////////////////////////////////  Access Granted    ///////////////////////////////////
-//void granted ( uint16_t setDelay) { //open only for a given time
-void granted () {                     //stay ope,
+void granted ( uint16_t setDelay) { //open only for a given time
+//void granted () {                     //stay ope,
   digitalWrite(blueLed, LED_OFF);     // Turn off blue LED
   digitalWrite(redLed, LED_OFF);      // Turn off red LED
   digitalWrite(greenLed, LED_ON);     // Turn on green LED

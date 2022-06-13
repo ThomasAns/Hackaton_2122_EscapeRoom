@@ -291,7 +291,7 @@ void loop() {
     if(correct) {
       Serial.println("Password is correct");
       delay(1000);
-      //BadgePermission = false;
+      BadgePermission = false;
       do {
         //exit(0); //temp exit loop
         //TODO code: Sweep servo open final door

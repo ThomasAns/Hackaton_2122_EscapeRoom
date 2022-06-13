@@ -66,9 +66,13 @@
       <article class="doc__content">
         <section class="js-section">
           <h1 class="" style="font-size: 2em">Introductie</h1>
+<<<<<<< Updated upstream
 	  <h2 style="margin: 2.5rem 0rem;"><a href="https://hackaton.thomasanseeuw.ikdoeict.be/index.html" 
 	    style="color: white; background-color: #d60d21; padding: .5rem; border-radius: 5px;"
 	    >!!! Ga naar de origineele documentatie site !!!</a></h2>
+=======
+          <h2 style="margin: 2.5rem 0rem;"><a href="https://hackaton.thomasanseeuw.ikdoeict.be/index.html" style="color: white; background-color: #d60d21; padding: .5rem; border-radius: 5px;">!!! Ga naar de origineele documentatie site !!!</a></h2>
+>>>>>>> Stashed changes
           <p>
             Je wilt inbreken in een bank. Je moet eerst de juist keycard vinden
             van de bankmedewerkers. Als je de keycard hebt kan je de code van
@@ -127,28 +131,28 @@ Op deze manier is er slechts 1 keer een ‘random’ input van de gebruiker zelf
           <h3>Code</h3>
           <h4>CodeGenerator.h</h4>
           <pre class="lang:cpp decode:true prettyprint">
-#pragma once
+<code class="include">#pragma</code> <code class="cod">once</code>
 <code class="include">#include</code> <code><</code><code class="library">Math</code>.h>
-#define PI 3.14159265359
-class CodeGenerator
+<code class="include">#define</code> <code class="type">PI</code> 3.14159265359
+<code class="type">class</code> <code class="cod">CodeGenerator</code>
 {
-public:
-	static int* getRandomCode(int input);
-private:
-	static double getAbs(double num);
+<code class="type">public</code>:
+	<code class="cod">static</code> <code class="type">int*</code> <code class="cod">getRandomCode</code>(<code class="type">int</code> <code class="cod">input</code>);
+<code class="type">private</code>:
+	<code class="cod">static</code> <code class="type">double</code> <code class="cod">getAbs</code>(<code class="type">double</code> <code class="cod">num</code>);
 };
           </pre>
           <h4>CodeGenerator.cpp:</h4>
           <pre class="lang:cpp decode:true prettyprint code--block">
 <code class="include">#include</code> "<code class="library">CodeGenerator</code>.h"
-int* CodeGenerator::getRandomCode(int input) {
+<code class="type">int*</code> CodeGenerator::getRandomCode(int input) {
 
-    const double multiplication = 1034.8123;
-    double vorigGegenereerdGetal;
+    <code class="type">const double</code> <code class="cod">multiplication</code> = 1034.8123;
+    <code class="type">double</code> <code class="cod">vorigGegenereerdGetal</code>;
 
     <code class="comment">//getal 1</code>
-    double nieuwGetal = getAbs(sin(input)) * multiplication * PI;
-    int getal1 = floor(nieuwGetal);
+    <code class="type">double</code> <code class="cod">nieuwGetal</code> = getAbs(sin(input)) * multiplication * PI;
+    <code class="type">int</code> getal1 = floor(nieuwGetal);
     getal1 %= 10;
     vorigGegenereerdGetal = nieuwGetal;
 
@@ -201,10 +205,10 @@ double CodeGenerator::getAbs(double num) {
           <img src="./img/Schema_morse.png" alt="" width="100%" />
           <h3>Code</h3>
           <pre class="lang:c# decode:true prettyprint code--block">
-<code>#include</code> <code><</code>CodeGenerator.h>
-#include <code><</code>Servo.h>
-#include <code><</code>Keypad.h>
-#include <code><</code>LiquidCrystal_I2C.h>
+<code class="include">#include</code> <code><</code><code class="library">CodeGenerator</code>.h>
+<code class="include">#include</code> <code><</code><code class="library">Servo</code>.h>
+<code class="include">#include</code> <code><</code><code class="library">Keypad</code>.h>
+<code class="include">#include</code> <code><</code><code class="library">LiquidCrystal_I2C</code>.h>
 
 Servo myservo;
 int bieper = 13;        <code class="comment">//Pin voor buzzer</code>
@@ -426,13 +430,13 @@ void speelStreep() {
           <img src="./img/Schema_afstand.png" alt="" width="100%" />
           <h3>Code</h3>
           <pre class="lang:cpp decode:true prettyprint code--block">
-#include <CodeGenerator.h>
-#include <Servo.h>
-#include <LiquidCrystal_I2C.h>
-#include <Keypad.h>
+<code class="include">#include</code> <code><</code><code class="library">CodeGenerator</code>.h>
+<code class="include">#include</code> <code><</code><code class="library">Servo</code>.h>
+<code class="include">#include</code> <code><</code><code class="library">LiquidCrystal_I2C</code>.h>
+<code class="include">#include</code> <code><</code><code class="library">Keypad</code>.h>
 
-#define echoPin 11 // attach pin D2 Arduino to pin Echo of HC-SR04
-#define trigPin 10 //attach pin D3 Arduino to pin Trig of HC-SR04
+<code class="include">#define</code> echoPin 11 // attach pin D2 Arduino to pin Echo of HC-SR04
+<code class="include">#define</code> trigPin 10 //attach pin D3 Arduino to pin Trig of HC-SR04
 
 LiquidCrystal_I2C lcd(0x27,20,4);
 
@@ -615,12 +619,11 @@ void loop() {
           <img src="./img/PuzzleLaserSchema1.PNG" alt="" />
           <h3>Code</h3>
           <pre class="lang:cpp decode:true prettyprint code--block">
-#include <CodeGenerator.h>
-
-#include <Servo.h>
-#include <Wire.h>
-#include <LiquidCrystal_I2C.h>
-#include <SoftwareSerial.h>
+<code class="include">#include</code> <code><</code><code class="library">CodeGenerator</code>.h>
+<code class="include">#include</code> <code><</code><code class="library">Servo</code>.h>
+<code class="include">#include</code> <code><</code><code class="library">Wire</code>.h>
+<code class="include">#include</code> <code><</code><code class="library">LiquidCrystal_I2C</code>.h>
+<code class="include">#include</code> <code><</code><code class="library">SoftwareSerial</code>.h>
 
 //SoftwareSerial mySerial(10, 11); // RX, TX //Serial no longer used -> I2C
  
@@ -748,24 +751,24 @@ void loop() {
  */</code>
 <code class="include">#include</code> <code><</code><code class="library">CodeGenerator</code>.h>          <code class="comment">//Random seed</code>
 <code class="include">#include</code> <code><</code><code class="library">Arduino</code>.h>                
-<code class="include">#include</code> "PinDefinitionsAndMore.h"  <code class="comment">//pindefinations for ir-receiver</code>
-<code class="include">#include</code> <code><</code>IRremote.h>               <code class="comment">//Library for IR</code>
-<code class="include">#include</code> <code><</code>Wire.h>                   <code class="comment">//I2C for random seed input</code>
-<code class="include">#include</code><code><</code>"EEPROM.h>                 <code class="comment">// We are going to read and write PICC's UIDs from/to EEPROM</code>
-<code class="include">#include</code> <code><</code>SPI.h>                    <code class="comment">// RC522 Module uses SPI protocol</code>
-<code class="include">#include</code> <code><</code>MFRC522.h>                <code class="comment">// Library for Mifare RC522 Devices</code>
-<code class="include">#include</code> <code><</code>Servo.h>
+<code class="include">#include</code> "<code class="library">PinDefinitionsAndMore</code>.h"  <code class="comment">//pindefinations for ir-receiver</code>
+<code class="include">#include</code> <code><</code><code class="library">IRremote</code>.h>               <code class="comment">//Library for IR</code>
+<code class="include">#include</code> <code><</code><code class="library">Wire</code>.h>                   <code class="comment">//I2C for random seed input</code>
+<code class="include">#include</code> <code><</code>"<code class="library">EEPROM</code>.h>                 <code class="comment">// We are going to read and write PICC's UIDs from/to EEPROM</code>
+<code class="include">#include</code> <code><</code><code class="library">SPI</code>.h>                    <code class="comment">// RC522 Module uses SPI protocol</code>
+<code class="include">#include</code> <code><</code><code class="library">MFRC522</code>.h>                <code class="comment">// Library for Mifare RC522 Devices</code>
+<code class="include">#include</code> <code><</code><code class="library">Servo</code>.h>
 
-#define LED_ON HIGH
-#define LED_OFF LOW
+<code class="include">#define</code> <code class="type">LED_ON HIGH</code>
+<code class="include">#define</code> <code class="type">LED_OFF LOW</code>
 
-#define redLed 7                    <code class="comment">// Set Led Pins</code>
-#define greenLed 6         
-#define blueLed 5          
+<code class="include">#define</code> <code class="type">redLed 7</code>                    <code class="comment">// Set Led Pins</code>
+<code class="include">#define</code> <code class="type">greenLed 6 </code>        
+<code class="include">#define</code> <code class="type">blueLed 5</code>          
                            
-#define servo 8                     <code class="comment">// Set Servo Pin</code>
+<code class="include">#define</code> <code class="type">servo</code> 8                     <code class="comment">// Set Servo Pin</code>
                            
-bool programMode = false;           <code class="comment">// initialize programming mode to false</code>
+<code class="type">bool</code> programMode = false;           <code class="comment">// initialize programming mode to false</code>
                            
 uint8_t successRead;                <code class="comment">// Variable integer to keep if we have Successful Read from Reader</code>
                            
