@@ -96,11 +96,15 @@
 #define LED_ON HIGH
 #define LED_OFF LOW
 
-#define redLed 7           // Set Led Pins
-#define greenLed 6         
-#define blueLed 5          
+#define redLed 8           // Set Led Pins RFID
+#define greenLed 7         
+#define blueLed 6   
+
+#define IRredLed 5           // Set Led Pins RFID
+#define IRgreenLed 4         
+#define IRblueLed 3  
                            
-#define servo 8            // Set Servo Pin
+//#define servo 1            // Set Servo Pin
                            
 bool programMode = false;  // initialize programming mode to false
                            
@@ -131,12 +135,18 @@ void setup() {
   pinMode(redLed, OUTPUT);
   pinMode(greenLed, OUTPUT);
   pinMode(blueLed, OUTPUT);
-  pinMode(servo, OUTPUT);
+    pinMode(IRredLed, OUTPUT);
+  pinMode(IRgreenLed, OUTPUT);
+  pinMode(IRblueLed, OUTPUT);
+  //pinMode(servo, OUTPUT);
 
-  digitalWrite(servo, HIGH);        // Make sure door is locked
+  //digitalWrite(servo, HIGH);        // Make sure door is locked
   digitalWrite(redLed, LED_OFF);    // Make sure led is off
   digitalWrite(greenLed, LED_OFF);  // Make sure led is off
   digitalWrite(blueLed, LED_OFF);   // Make sure led is off
+  digitalWrite(IRredLed, LED_OFF);    // Make sure led is off
+  digitalWrite(IRgreenLed, LED_OFF);  // Make sure led is off
+  digitalWrite(IRblueLed, LED_OFF);   // Make sure led is off
 
   //Protocol Configuration
   Serial.begin(9600);
@@ -185,77 +195,29 @@ void setup() {
 
 ///////////////////////////////////////// Main Loop ///////////////////////////////////
 void loop() {
-  // do {
-  //   successRead = getID();  // sets successRead to 1 when we get read from reader otherwise 0
-  //   if (programMode) {
-  //     cycleLeds();              // Program Mode cycles through Red Green Blue waiting to read a new card
-  //   }
-  //   else {
-  //     normalModeOn();     // Normal mode, blue Power LED is on, all others are off
-  //   }
-  // } while (!successRead);   //the program will not go further while you are not getting a successful read
-  // if (programMode) {
-  //   if ( isMaster(readCard) ) { //When in program mode check First If master card scanned again to exit program mode
-  //     Serial.println(F("Master Card Scanned"));
-  //     Serial.println(F("Exiting Program Mode"));
-  //     Serial.println(F("-----------------------------"));
-  //     programMode = false;
-  //     return;
-  //   } else {
-  //     if ( findID(readCard) ) { // If scanned card is known delete it
-  //       Serial.println(F("I know this PICC, removing..."));
-  //       deleteID(readCard);
-  //       Serial.println("-----------------------------");
-  //       Serial.println(F("Scan a PICC to ADD or REMOVE to EEPROM"));
-  //     }
-  //     else {                    // If scanned card is not known add it
-  //       Serial.println(F("I do not know this PICC, adding..."));
-  //       writeID(readCard);
-  //       Serial.println(F("-----------------------------"));
-  //       Serial.println(F("Scan a PICC to ADD or REMOVE to EEPROM"));
-  //     }
-  //   }
-  // } else {
-  //   if ( isMaster(readCard)) {    // If scanned card's ID matches Master Card's ID - enter program mode
-  //     programMode = true;
-  //     Serial.println(F("Hello Master - Entered Program Mode"));
-  //     uint8_t count = EEPROM.read(0);   // Read the first Byte of EEPROM that
-  //     Serial.print(F("I have "));     // stores the number of ID's in EEPROM
-  //     Serial.print(count);
-  //     Serial.print(F(" record(s) on EEPROM"));
-  //     Serial.println("");
-  //     Serial.println(F("Scan a PICC to ADD or REMOVE to EEPROM"));
-  //     Serial.println(F("Scan Master Card again to Exit Program Mode"));
-  //     Serial.println(F("-----------------------------"));
-  //   }
-  //   else {
-  //     if ( findID(readCard) ) { // If not, see if the card is in the EEPROM
-  //       Serial.println(F("Welcome, You shall pass"));
-  //       granted(300);         // Open the door lock for 300 ms
-  //       Badge-permission = true;
-  //     }
-  //     else {      // If not, show that the ID was not valid
-  //       Serial.println(F("You shall not pass"));
-  //       denied();
-  //     }
-  //   }
-  // }
     /*
      * leest ir-inputs in tot er 4 zijn om te vergeijken met de oplossing.
      */
+    for (int x=0; x<4; x++){
+      Serial.print(testing[x]);  
+    }
+    Serial.println("");
     while (count < 4){
+      IRnormalModeOn();
       if (IrReceiver.decode()) {
         waardes();
         results[count] = waarde;
         Serial.print(results[count]);  //Serial.print(waarde);
         count++;
-        delay(1000);
+        delay(500);
         /*
         * !!!Important!!! Enable receiving of the next value,
         * since receiving has stopped after the end of the current received data packet.
         */ 
         IrReceiver.resume(); // Enable receiving of the next value
-      } 
+      } else {
+        IRnormalModeOn();
+      }
     }  
     /*
      * Als er 4 waardes zijn vergelijk elk deel met oplossing.
@@ -275,6 +237,10 @@ void loop() {
         if (test1 != test2) {
           Serial.println("Fout!");
           correct = false;
+          digitalWrite(IRgreenLed, LED_OFF);  // Make sure green LED is off
+          digitalWrite(IRblueLed, LED_OFF);   // Make sure blue LED is off
+          digitalWrite(IRredLed, LED_ON);   // Turn on red LED
+          delay(1000);
           count=0; // reset om op nieuw waardes in te lezen
           break;
         } else {
@@ -289,6 +255,9 @@ void loop() {
       count = 0;
     }
     if(correct) {
+      digitalWrite(IRblueLed, LED_OFF);     // Turn off blue LED
+      digitalWrite(IRredLed, LED_OFF);      // Turn off red LED
+      digitalWrite(IRgreenLed, LED_ON);     // Turn on green LED    
       Serial.println("Password is correct");
       delay(1000);
       BadgePermission = false;
@@ -343,6 +312,7 @@ void loop() {
               Serial.println(F("Welcome, You shall pass"));
               //granted(300);         // Open the door lock for 300 ms
               granted();         // Open the door lock
+              exit(0);
             }
             else {      // If not, show that the ID was not valid
               Serial.println(F("You shall not pass"));
@@ -356,6 +326,13 @@ void loop() {
       BadgePermission = false;
     } 
 }
+/////////////////////////////////////////  ir INPUT    ///////////////////////////////////
+void IRInput () {
+  digitalWrite(IRblueLed, LED_ON);     // Turn off blue LED
+  digitalWrite(IRredLed, LED_OFF);      // Turn off red LED
+  digitalWrite(IRgreenLed, LED_OFF);     // Turn on green LED           
+  delay(500);                        // Hold green LED on for a second
+}
 
 /////////////////////////////////////////  Access Granted    ///////////////////////////////////
 //void granted ( uint16_t setDelay) { //open only for a given time
@@ -363,10 +340,10 @@ void granted () {                     //stay ope,
   digitalWrite(blueLed, LED_OFF);     // Turn off blue LED
   digitalWrite(redLed, LED_OFF);      // Turn off red LED
   digitalWrite(greenLed, LED_ON);     // Turn on green LED
-  digitalWrite(servo, LOW);           // Unlock door!
+  //digitalWrite(servo, LOW);           // Unlock door!
   BadgePermission = true;             
-  //delay(setDelay);                  // Hold door lock open for given seconds
-  digitalWrite(servo, HIGH);          // Relock door
+  //delay(1000);                  // Hold door lock open for given seconds
+  //digitalWrite(servo, HIGH);          // Relock door
   delay(1000);                        // Hold green LED on for a second
 }
 
@@ -418,12 +395,19 @@ void cycleLeds() {
   delay(200);
 }
 
+//////////////////////////////////////// Normal Mode IRLed  ///////////////////////////////////
+void IRnormalModeOn () {
+  digitalWrite(IRblueLed, LED_OFF);  // Blue LED off and ready to read card
+  digitalWrite(IRredLed, LED_OFF);  // Make sure Red LED is off
+  digitalWrite(IRgreenLed, LED_OFF);  // Make sure Green LED is off
+}
+
 //////////////////////////////////////// Normal Mode Led  ///////////////////////////////////
 void normalModeOn () {
   digitalWrite(blueLed, LED_ON);  // Blue LED ON and ready to read card
   digitalWrite(redLed, LED_OFF);  // Make sure Red LED is off
   digitalWrite(greenLed, LED_OFF);  // Make sure Green LED is off
-  digitalWrite(servo, HIGH);    // Make sure Door is Locked
+  //  digitalWrite(servo, HIGH);    // Make sure Door is Locked
 }
 
 //////////////////////////////////////// Read an ID from EEPROM //////////////////////////////
@@ -612,6 +596,7 @@ void receiveEvent(int howMany)
 
 ///////////////////////////////////////// ir-receiver value check ///////////////////////////////////
 void waardes(){
+  IRInput();
   /*
   * Finally, check the received data and perform actions according to the received command
   */
